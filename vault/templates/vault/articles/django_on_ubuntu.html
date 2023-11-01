@@ -1,0 +1,28 @@
+{% extends 'vault/base.html' %}
+{% block content %}
+<article class="content-section">
+  <div class="media-body">
+    <p><span style="color:#212529">sudo add-apt-repository ppa:webupd8team/atom </span></p>
+
+    <p><span style="color:#212529">sudo apt-get install atom </span></p>
+
+    <p><span style="color:#212529">sudo apt install python3-pip</span></p>
+
+    <p><span style="color:#212529">sudo apt install virtualenv </span></p>
+
+    <p><span style="color:#212529">cd Desktop &amp;&amp; mkdir velox &amp;&amp; cd velox </span></p>
+
+    <p><span style="color:#212529">virtualenv env</span></p>
+
+    <p><span style="color:#212529">source env/bin/activate</span></p>
+
+    <p><span style="color:#212529">pip install python3-django </span></p>
+
+    <p><span style="color:#212529">django-admin startproject casa . </span></p>
+
+    <p><span style="color:#212529">python3 manage.py startapp blog</span></p>
+
+    <p><span style="color:#212529">python3 manage.py startapp account </span></p>
+  </div>
+</article>
+{% endblock %}

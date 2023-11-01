@@ -1,0 +1,1831 @@
+{% extends 'vault/base.html' %}
+{% block content %}
+<article class="content-section">
+  <div class="media-body">
+    <h4>python:0</h4>
+    <hr>
+    <p><strong><span style="color:#e67e22"><strong>Fun facts:</strong></span></strong></p>
+    <p><span style="color:#212529">&quot;Lambda&quot; means &quot;make function real quick&quot; - also referred to as a &quot;disposable function&quot;. There. Dealt with.</span></p>
+    <pre>
+    <span style="color:#212529">lambda argument: manipulate(argument)</span></pre>
+    <p><span style="color:#212529">x = lambda a : a + 10<br />
+    print(x(5))</span></p>
+    <p><span style="color:#212529">Will print out &ldquo;15&ldquo;</span></p>
+    <p><strong><span style="color:#e67e22"><strong>Reversed:</strong></span></strong></p>
+    <p><span style="color:#212529">s = &quot;hello world&quot;</span></p>
+    <p><span style="color:#212529">s = [::-1]</span></p>
+    <p><span style="color:#212529">print(&#39;reversed string: &#39;, s)</span></p>
+    <p><strong><span style="color:#e67e22"><strong>Zip it:</strong></span></strong></p>
+    <p><span style="color:#212529">value = [(1, 2, 3), (44, 55, 66)]</span></p>
+    <p><span style="color:#212529">zip(*value)</span></p>
+    <p>&nbsp;</p>
+    <p><span style="color:#212529">list1 = [11,22,33,44]</span></p>
+    <p><span style="color:#212529">list2 = [99,88,77,66]</span></p>
+    <p><span style="color:#212529">for x, y in zip(list1, list2):</span></p>
+    <p><span style="color:#212529">print(x, y)</span></p>
+    <p><strong><span style="color:#e67e22"><strong>Assignment:</strong></span></strong></p>
+    <p><span style="color:#212529">p = [1, 2, 3]</span></p>
+    <p><span style="color:#212529">x, y, z = p</span></p>
+    <p><em><span style="color:#212529">(typing x, y and z in the shell returns 1, 2 and 3 correspondingly)</span></em></p>
+    <p><strong><span style="color:#e67e22"><strong>The ol&#39; switch-a-roo:</strong></span></strong></p>
+    <p><span style="color:#212529">a = 6666</span></p>
+    <p><span style="color:#212529">b = 9999</span></p>
+    <p><span style="color:#212529">a, b = b, a</span></p>
+    <p><strong><span style="color:#e67e22"><strong>Tedious repetition:</strong></span></strong></p>
+    <p><span style="color:#212529">x = &#39;Hello&#39;</span></p>
+    <p><span style="color:#212529">y = &#39;world&#39;</span></p>
+    <p><span style="color:#212529">print(x*3 + &#39; &#39; + y*3)</span></p>
+    <p><strong><span style="color:#e67e22"><strong>If in:</strong></span></strong></p>
+    <p><span style="color:#212529">n = 22</span></p>
+    <p><span style="color:#212529">if n in [11, 22, 33, 44]:</span></p>
+    <p><span style="color:#212529">print(str(n) + &#39; found!&#39;))</span></p>
+    <p><strong><span style="color:#e67e22"><strong>Import:</strong></span></strong></p>
+    <p><span style="color:#212529">import calendar </span></p>
+    <p><span style="color:#212529">cal = calendar.month(2018, 8)</span></p>
+    <p><span style="color:#212529">print(cal)</span></p>
+    <p><strong><span style="color:#e67e22"><strong>Join:</strong></span></strong></p>
+    <p><span style="color:#212529">words = [&#39;come&#39;, &#39;together&#39;, &#39;right&#39;, &#39;now&#39;, &#39;one&#39;, &#39;and&#39;, &#39;all&#39;]</span></p>
+    <p><span style="color:#212529">print(&#39; &#39;.join(words))</span></p>
+    <p><span style="color:#212529">Important: Note that one may use join() to abstract (multiple) file paths, which is - amongst others - useful in terms of cross-platform references:</span></p>
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>myFiles = [&#39;accounts.txt&#39;, &#39;details.csv&#39;, &#39;invite.docx&#39;]</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>for filename in myFiles:</strong></span></strong>
+    <span style="color:#212529">        print(os.path.join(&#39;C:\\Users\\asweigart&#39;, filename))</span>
+    <span style="color:#212529">C:\Users\asweigart\accounts.txt</span>
+    <span style="color:#212529">C:\Users\asweigart\details.csv</span>
+    <span style="color:#212529">C:\Users\asweigart\invite.docx</span></pre>
+    <p><span style="color:#212529">- Two backslashes are inserted; the 1st one escapes the 2nd... :)</span></p>
+    <p><strong><span style="color:#e67e22"><strong>An Absolute MUST READ (debugging): </strong></span></strong></p>
+    <p><a href="https://automatetheboringstuff.com/chapter10/"><span style="color:#007bff">https://automatetheboringstuff.com/chapter10/</span></a></p>
+    <p><strong><span style="color:#e67e22"><strong>The Multiple Assignment Trick:</strong></span></strong></p>
+    <p><span style="color:#212529">The </span><em><span style="color:#212529">multiple assignment trick</span></em><span style="color:#212529">is a shortcut that lets you assign multiple variables with the values in a list in one line of code. So instead of doing this:</span></p>
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; cat = [&#39;fat&#39;, &#39;orange&#39;, &#39;loud&#39;]</span>
+    <span style="color:#212529">&gt;&gt;&gt; size = cat[0]</span>
+    <span style="color:#212529">&gt;&gt;&gt; color = cat[1]</span>
+    <span style="color:#212529">&gt;&gt;&gt; disposition = cat[2]</span></pre>
+    <p><span style="color:#212529">you could type this line of code:</span></p>
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; cat = [&#39;fat&#39;, &#39;orange&#39;, &#39;loud&#39;]</span>
+    <span style="color:#212529">&gt;&gt;&gt; size, color, disposition = cat</span></pre>
+    <p><span style="color:#212529">The number of variables and the length of the list must be exactly equal, or Python will give you a </span><code><span style="color:#e83e8c">ValueError</span></code><span style="color:#212529">:</span></p>
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; cat = [&#39;fat&#39;, &#39;orange&#39;, &#39;loud&#39;]</span>
+    <span style="color:#212529">&gt;&gt;&gt; size, color, disposition, name = cat</span>
+    <span style="color:#212529">Traceback (most recent call last):</span>
+    <span style="color:#212529">  File &quot;&lt;pyshell#84&gt;&quot;, line 1, in &lt;module&gt;</span>
+    <span style="color:#212529">    size, color, disposition, name = cat</span>
+    <span style="color:#212529">ValueError: need more than 3 values to unpack</span></pre>
+    <p><span style="color:#212529">The multiple assignment trick can also be used to swap the values in two variables:</span></p>
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; a, b = &#39;Alice&#39;, &#39;Bob&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; a, b = b, a</span>
+    <span style="color:#212529">&gt;&gt;&gt; print(a)</span>
+    <span style="color:#212529">&#39;Bob&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; print(b)</span>
+    <span style="color:#212529">&#39;Alice&#39;</span></pre>
+  </div>
+</article>
+
+<article class="content-section">
+  <div class="media-body">
+    <p><span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam = &#39;Hello world!&#39;</strong></span></strong></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam[0]</strong></span></strong>
+    <span style="color:#212529">&#39;H&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam[4]</strong></span></strong>
+    <span style="color:#212529">&#39;o&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam[-1]</strong></span></strong>
+    <span style="color:#212529">&#39;!&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam[0:5]</strong></span></strong>
+    <span style="color:#212529">&#39;Hello&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam[:5]</strong></span></strong>
+    <span style="color:#212529">&#39;Hello&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam[</strong></span></strong></pre>
+
+    <p>&nbsp;</p>
+
+    <table border="0" cellpadding="2" cellspacing="0" style="width:283px">
+    	<thead>
+    		<tr>
+    			<th>
+    			<p>Escape character</p>
+    			</th>
+    			<th>
+    			<p>Prints as</p>
+    			</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\&#39;</span></code></p>
+    			</td>
+    			<td>
+    			<p>Single quote</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\&quot;</span></code></p>
+    			</td>
+    			<td>
+    			<p>Double quote</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\t</span></code></p>
+    			</td>
+    			<td>
+    			<p>Tab</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\n</span></code></p>
+    			</td>
+    			<td>
+    			<p>Newline (line of break)</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\\</span></code></p>
+    			</td>
+    			<td>
+    			<p>Backslash</p>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+
+    <p><span style="color:#212529">Note: Sometimes it&#39;s easier to use multi line strings in stead of \n</span></p>
+
+    <p><span style="color:#212529">&quot;&quot;&quot;</span></p>
+
+    <p><span style="color:#212529">blah</span></p>
+
+    <p><span style="color:#212529">Blah blah</span></p>
+
+    <p><span style="color:#212529">Blah</span></p>
+
+    <p><span style="color:#212529">&quot;&quot;&quot;</span></p>
+
+    <p>&nbsp;</p>
+
+    <p><span style="color:#212529">Raw Strings</span></p>
+
+    <p><span style="color:#212529">You can place an </span><code><span style="color:#e83e8c">r</span></code><span style="color:#212529"> before the beginning quotation mark of a string to make it a raw string. A </span><em><span style="color:#212529">raw string</span></em><span style="color:#212529"> completely ignores all escape characters and prints any backslash that appears in the string. For example, type the following into the interactive shell:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>print(r&#39;That is Carol\&#39;s cat.&#39;)</strong></span></strong>
+    <span style="color:#212529">That is Carol\&#39;s cat.</span></pre>
+
+    <p>&nbsp;</p>
+
+    <p><span style="color:#212529">Along with </span><code><span style="color:#e83e8c">islower()</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">isupper()</span></code><span style="color:#212529">, there are several string methods that have names beginning with the word </span><em><span style="color:#212529">is</span></em><span style="color:#212529">. These methods return a Boolean value that describes the nature of the string. Here are some common </span><code><span style="color:#e83e8c">isX</span></code><span style="color:#212529">string methods:</span></p>
+
+    <ul>
+    	<li>
+    	<p><code><span style="color:#e83e8c">isalpha()</span></code><span style="color:#212529"> returns </span><code><span style="color:#e83e8c">True</span></code><span style="color:#212529"> if the string consists only of letters and is not blank.</span></p>
+    	</li>
+    	<li>
+    	<p><code><span style="color:#e83e8c">isalnum()</span></code><span style="color:#212529"> returns </span><code><span style="color:#e83e8c">True</span></code><span style="color:#212529"> if the string consists only of letters and numbers and is not blank.</span></p>
+    	</li>
+    	<li>
+    	<p><code><span style="color:#e83e8c">isdecimal()</span></code><span style="color:#212529"> returns </span><code><span style="color:#e83e8c">True</span></code><span style="color:#212529"> if the string consists only of numeric characters and is not blank.</span></p>
+    	</li>
+    	<li>
+    	<p><code><span style="color:#e83e8c">isspace()</span></code><span style="color:#212529"> returns </span><code><span style="color:#e83e8c">True</span></code><span style="color:#212529"> if the string consists only of spaces, tabs, and new-lines and is not blank.</span></p>
+    	</li>
+    	<li>
+    	<p><code><span style="color:#e83e8c">istitle()</span></code><span style="color:#212529"> returns </span><code><span style="color:#e83e8c">True</span></code><span style="color:#212529"> if the string consists only of words that begin with an uppercase letter followed by only lowercase letters.</span></p>
+    	</li>
+    </ul>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">Using </span><code><span style="color:#444444">rjust()</span></code><span style="color:#212529">, </span><code><span style="color:#444444">ljust()</span></code><span style="color:#212529">, and </span><code><span style="color:#444444">center()</span></code><span style="color:#212529"> lets you ensure that strings are neatly aligned, even if you aren&rsquo;t sure how many characters long your strings are.</span>
+
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam = &#39;SpamSpamBaconSpamEggsSpamSpam&#39;</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam.strip(&#39;ampS&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;BaconSpamEggs&#39;</span></pre>
+
+    <p><span style="color:#212529">Passing </span><code><span style="color:#e83e8c">strip()</span></code><span style="color:#212529"> the argument </span><code><span style="color:#e83e8c">&#39;ampS&#39;</span></code><span style="color:#212529"> will tell it to strip occurences of </span><code><span style="color:#e83e8c">a</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">m</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">p</span></code><span style="color:#212529">, and capital </span><code><span style="color:#e83e8c">S</span></code><span style="color:#212529">from the ends of the string stored in </span><code><span style="color:#e83e8c">spam</span></code><span style="color:#212529">. The order of the characters in the string passed to </span><code><span style="color:#e83e8c">strip()</span></code><span style="color:#212529">does not matter: </span><code><span style="color:#e83e8c">strip(&#39;ampS&#39;)</span></code><span style="color:#212529">will do the same thing as </span><code><span style="color:#e83e8c">strip(&#39;mapS&#39;)</span></code><span style="color:#212529"> or </span><code><span style="color:#e83e8c">strip(&#39;Spam&#39;)</span></code><span style="color:#212529">.</span></p>
+
+    <pre>
+
+    &nbsp;</pre>
+
+  </div>
+</article>
+
+<article class="content-section">
+  <div class="media-body">
+    <pre>
+    <span style="color:#212529">Keys, values &amp; items:</span>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam = {&#39;color&#39;: &#39;red&#39;, &#39;age&#39;: 42}</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>for v in spam.items():</strong></span></strong>
+    <span style="color:#212529">        </span><strong><span style="color:#212529"><strong>print(v)</strong></span></strong>
+
+    <span style="color:#212529">(color, age)</span>
+    <span style="color:#212529">(red, 42)</span></pre>
+
+    <p><span style="color:#212529">Returning as list:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>list(spam.keys())</strong></span></strong>
+    <span style="color:#212529">[&#39;color&#39;, &#39;age&#39;]</span></pre>
+
+    <p>&nbsp;</p>
+
+    <p><span style="color:#212529">Multiple assignment: </span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>for k, v in spam.items():</strong></span></strong>
+    <span style="color:#212529">        </span><strong><span style="color:#212529"><strong>print(&#39;Key: &#39; + k + &#39; Value: &#39; + str(v))</strong></span></strong>
+
+    <span style="color:#212529">Key: age Value: 42</span>
+    <span style="color:#212529">Key: color Value: red</span></pre>
+
+    <p>&nbsp;</p>
+
+    <p><span style="color:#212529">GET() args:</span></p>
+
+    <p><span style="color:#212529">two arguments: the key of the value to retrieve and a fallback value to return if that key does not exist.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>picnicItems = {&#39;apples&#39;: 5, &#39;cups&#39;: 2}</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>&#39;I am bringing &#39; + str(picnicItems.get(&#39;cups&#39;, 0)) + &#39; cups.&#39;</strong></span></strong>
+    <span style="color:#212529">&#39;I am bringing 2 cups.&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>&#39;I am bringing &#39; + str(picnicItems.get(&#39;eggs&#39;, 0)) + &#39; eggs.&#39;</strong></span></strong>
+    <span style="color:#212529">&#39;I am bringing 0 eggs.&#39;</span></pre>
+
+    <p>&nbsp;</p>
+
+    <p><span style="color:#212529">set default:</span></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">setdefault()</span></code><span style="color:#212529"> method offers a way to do this in one line of code. The first argument passed to the method is the key to check for, and the second argument is the value to set at that key if the key does not exist. If the key does exist, the </span><code><span style="color:#e83e8c">setdefault()</span></code><span style="color:#212529"> method returns the key&rsquo;s value. Enter the following into the interactive shell:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam = {&#39;name&#39;: &#39;Pooka&#39;, &#39;age&#39;: 5}</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam.setdefault(&#39;color&#39;, &#39;black&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;black&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam</strong></span></strong>
+    <span style="color:#212529">{&#39;color&#39;: &#39;black&#39;, &#39;age&#39;: 5, &#39;name&#39;: &#39;Pooka&#39;}</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam.setdefault(&#39;color&#39;, &#39;white&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;black&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spam</strong></span></strong>
+    <span style="color:#212529">{&#39;color&#39;: &#39;black&#39;, &#39;age&#39;: 5, &#39;name&#39;: &#39;Pooka&#39;}</span></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">setdefault()</span></code><span style="color:#212529"> method is a nice shortcut to ensure that a key exists. Here is a short program that counts the number of occurrences of each letter in a string. Open the file editor window and enter the following code, saving it as </span><em><span style="color:#212529">characterCount.py</span></em><span style="color:#212529">:</span></p>
+
+    <pre>
+    <span style="color:#212529">message = &#39;It was a bright cold day in April, and the clocks were striking thirteen.&#39;</span>
+    <span style="color:#212529">count = {}</span>
+
+    <span style="color:#212529">for character in message:</span>
+    <span style="color:#212529">    count.setdefault(character, 0)</span>
+    <span style="color:#212529">    count[character] = count[character] + 1</span>
+
+    <span style="color:#212529">print(count)</span></pre>
+
+    <p>&nbsp;</p>
+
+    <p><span style="color:#212529">Pretty Printing</span></p>
+
+    <p><span style="color:#212529">If you import the </span><code><span style="color:#e83e8c">pprint</span></code><span style="color:#212529"> module into your programs, you&rsquo;ll have access to the </span><code><span style="color:#e83e8c">pprint()</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">pformat()</span></code><span style="color:#212529"> functions that will &ldquo;pretty print&rdquo; a dictionary&rsquo;s values. This is helpful when you want a cleaner display of the items in a dictionary than what </span><code><span style="color:#e83e8c">print()</span></code><span style="color:#212529">provides.</span></p>
+
+    <p><span style="color:#212529">If you want to obtain the prettified text as a string value instead of displaying it on the screen, call </span><code><span style="color:#e83e8c">pprint.pformat()</span></code><span style="color:#212529"> instead. These two lines are equivalent to each other:</span></p>
+
+    <pre>
+    <span style="color:#212529">pprint.pprint(someDictionaryValue)</span>
+    <span style="color:#212529">print(pprint.pformat(someDictionaryValue))</span></pre>
+
+    <p><span style="color:#212529">__________________________</span></p>
+
+    <p><span style="color:#212529">Practice Projects</span></p>
+
+    <p><span style="color:#212529">For practice, write programs to do the following tasks.</span></p>
+
+    <p><span style="color:#212529">Fantasy Game Inventory</span></p>
+
+    <p><span style="color:#212529">You are creating a fantasy video game. The data structure to model the player&rsquo;s inventory will be a dictionary where the keys are string values describing the item in the inventory and the value is an integer value detailing how many of that item the player has. For example, the dictionary value </span><code><span style="color:#e83e8c">{&#39;rope&#39;: 1, &#39;torch&#39;: 6, &#39;gold coin&#39;: 42, &#39;dagger&#39;: 1, &#39;arrow&#39;: 12}</span></code><span style="color:#212529"> means the player has 1 rope, 6 torches, 42 gold coins, and so on.</span></p>
+
+    <p><span style="color:#212529">Write a function named </span><code><span style="color:#e83e8c">displayInventory()</span></code><span style="color:#212529"> that would take any possible &ldquo;inventory&rdquo; and display it like the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">Inventory:</span>
+    <span style="color:#212529">12 arrow</span>
+    <span style="color:#212529">42 gold coin</span>
+    <span style="color:#212529">1 rope</span>
+    <span style="color:#212529">6 torch</span>
+    <span style="color:#212529">1 dagger</span>
+    <span style="color:#212529">Total number of items: 62</span></pre>
+
+    <p><span style="color:#212529">Hint: You can use a </span><code><span style="color:#e83e8c">for</span></code><span style="color:#212529"> loop to loop through all the keys in a dictionary.</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529"># inventory.py</span>
+    <span style="color:#212529">stuff = {&#39;rope&#39;: 1, &#39;torch&#39;: 6, &#39;gold coin&#39;: 42, &#39;dagger&#39;: 1, &#39;arrow&#39;: 12}</span>
+
+    <span style="color:#212529">def displayInventory(inventory):</span>
+    <span style="color:#212529">    print(&quot;Inventory:&quot;)</span>
+    <span style="color:#212529">    item_total = 0</span>
+    <span style="color:#212529">    for k, v in inventory.items():</span>
+    <span style="color:#212529">        # FILL IN THE CODE HERE</span>
+    <span style="color:#212529">    print(&quot;Total number of items: &quot; + str(item_total))</span>
+
+    <span style="color:#212529">displayInventory(stuff)</span></pre>
+
+    <p><span style="color:#212529">List to Dictionary Function for Fantasy Game Inventory</span></p>
+
+    <p><span style="color:#212529">Imagine that a vanquished dragon&rsquo;s loot is represented as a list of strings like this:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">dragonLoot = [&#39;gold coin&#39;, &#39;dagger&#39;, &#39;gold coin&#39;, &#39;gold coin&#39;, &#39;ruby&#39;]</span></pre>
+
+    <p><span style="color:#212529">Write a function named </span><code><span style="color:#e83e8c">addToInventory(inventory, addedItems)</span></code><span style="color:#212529">, where the </span><code><span style="color:#e83e8c">inventory</span></code><span style="color:#212529">parameter is a dictionary representing the player&rsquo;s inventory (like in the previous project) and the </span><code><span style="color:#e83e8c">addedItems</span></code><span style="color:#212529"> parameter is a list like </span><code><span style="color:#e83e8c">dragonLoot</span></code><span style="color:#212529">. The </span><code><span style="color:#e83e8c">addToInventory()</span></code><span style="color:#212529"> function should return a dictionary that represents the updated inventory. Note that the </span><code><span style="color:#e83e8c">addedItems</span></code><span style="color:#212529"> list can contain multiples of the same item. Your code could look something like this:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">def addToInventory(inventory, addedItems):</span>
+    <span style="color:#212529">    # your code goes here</span>
+
+    <span style="color:#212529">inv = {&#39;gold coin&#39;: 42, &#39;rope&#39;: 1}</span>
+    <span style="color:#212529">dragonLoot = [&#39;gold coin&#39;, &#39;dagger&#39;, &#39;gold coin&#39;, &#39;gold coin&#39;, &#39;ruby&#39;]</span>
+    <span style="color:#212529">inv = addToInventory(inv, dragonLoot)</span>
+    <span style="color:#212529">displayInventory(inv)</span></pre>
+
+    <p><span style="color:#212529">The previous program (with your </span><code><span style="color:#e83e8c">displayInventory()</span></code><span style="color:#212529"> function from the previous project) would output the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">Inventory:</span>
+    <span style="color:#212529">45 gold coin</span>
+    <span style="color:#212529">1 rope</span>
+    <span style="color:#212529">1 ruby</span>
+    <span style="color:#212529">1 dagger</span>
+
+    <span style="color:#212529">Total number of items: 48</span>
+    </pre>
+  </div>
+</article>
+
+
+<article class="content-section">
+  <div class="media-body">
+    <p><strong><span style="color:#e67e22"><strong>join():</strong></span></strong></p>
+
+    <p><span style="color:#212529">You may join() file paths:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import os</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.join(&#39;usr&#39;, &#39;bin&#39;, &#39;spam&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;usr\\bin\\spam&#39;</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>getcwd(), chdir() mkdirs(), rmdirs() etc.:</strong></span></strong></p>
+
+    <p><span style="color:#212529">You can get the current working directory as a string value with the </span><code><span style="color:#e83e8c">os.getcwd()</span></code><span style="color:#212529"> function and change it with </span><code><span style="color:#e83e8c">os.chdir()</span></code></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import os</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.makedirs(&#39;C:\\delicious\\walnut\\waffles&#39;)</strong></span></strong></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Dots:</strong></span></strong></p>
+
+    <p><span style="color:#212529">A single period (&ldquo;dot&rdquo;) for a folder name is shorthand for &ldquo;this directory.&rdquo; Two periods (&ldquo;dot-dot&rdquo;) means &ldquo;the parent folder.&rdquo;</span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>abspath(), isabs() &amp; relpath():</strong></span></strong></p>
+
+    <p><code><span style="color:#e83e8c">os.path.abspath(path)</span></code><span style="color:#212529">will return a string of the absolute path of the argument, while os.path.isabs(path) will return a Boolean value; True if it&#39;s an absolute path ,False of it&#39;s a relative path.</span></p>
+
+    <p><span style="color:#212529">Calling </span><code><span style="color:#e83e8c">os.path.relpath(path, start)</span></code><span style="color:#212529"> will return a string of a relative path from the </span><code><span style="color:#e83e8c">start</span></code><span style="color:#212529"> path to </span><code><span style="color:#e83e8c">path</span></code><span style="color:#212529">. If </span><code><span style="color:#e83e8c">start</span></code><span style="color:#212529"> is not provided, the current working directory is used as the start path.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.abspath(&#39;.&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;C:\\Python34&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.abspath(&#39;.\\Scripts&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;C:\\Python34\\Scripts&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.isabs(&#39;.&#39;)</strong></span></strong>
+    <span style="color:#212529">False</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.isabs(os.path.abspath(&#39;.&#39;))</strong></span></strong>
+    <span style="color:#212529">True</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>dirname(), basename() &amp; split() + sep:</strong></span></strong></p>
+
+    <p><span style="color:#212529">Calling </span><code><span style="color:#e83e8c">os.path.dirname(path)</span></code><span style="color:#212529">will return a string of everything that comes before the last slash in the </span><code><span style="color:#e83e8c">path</span></code><span style="color:#212529"> argument. Calling </span><code><span style="color:#e83e8c">os.path.basename(path)</span></code><span style="color:#212529"> will return a string of everything that comes after the last slash in the </span><code><span style="color:#e83e8c">path</span></code><span style="color:#212529"> argument:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>path = &#39;C:\\Windows\\System32\\calc.exe&#39;</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.basename(path)</strong></span></strong>
+    <span style="color:#212529">&#39;calc.exe&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.dirname(path)</strong></span></strong>
+    <span style="color:#212529">&#39;C:\\Windows\\System32&#39;</span></pre>
+
+    <p><span style="color:#212529">If you need a path&rsquo;s dir name and base name together, you can just call </span><code><span style="color:#e83e8c">os.path.split()</span></code><span style="color:#212529"> to get a nice tuple:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>calcFilePath = &#39;C:\\Windows\\System32\\calc.exe&#39;</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.split(calcFilePath)</strong></span></strong>
+    <span style="color:#212529">(&#39;C:\\Windows\\System32&#39;, &#39;calc.exe&#39;)</span></pre>
+
+    <p><span style="color:#212529">Use sep to separate:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>calcFilePath.split(os.path.sep)</strong></span></strong>
+    <span style="color:#212529">[&#39;C:&#39;, &#39;Windows&#39;, &#39;System32&#39;, &#39;calc.exe&#39;]</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>File sizes &amp; folder content:</strong></span></strong></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.getsize(&#39;C:\\Windows\\System32\\calc.exe&#39;)</strong></span></strong>
+    <span style="color:#212529">776192</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.listdir(&#39;C:\\Windows\\System32&#39;)</strong></span></strong>
+    <span style="color:#212529">[&#39;0409&#39;, &#39;12520437.cpx&#39;, &#39;12520850.cpx&#39;, &#39;5U877.ax&#39;, &#39;aaclient.dll&#39;,</span>
+    <span style="color:#212529">[...]</span>
+    <span style="color:#212529">&#39;xwtpdui.dll&#39;, &#39;xwtpw32.dll&#39;, &#39;zh-CN&#39;, &#39;zh-HK&#39;, &#39;zh-TW&#39;, &#39;zipfldr.dll&#39;]</span></pre>
+
+    <p><span style="color:#212529">Note that listdir() is not a part of the os.path module, rather it&#39;s in the os module.</span></p>
+
+    <p><span style="color:#212529">If you want to find the total size of all the files in this directory, you can use </span><code><span style="color:#e83e8c">os.path.getsize()</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">os.listdir()</span></code><span style="color:#212529"> together, stringing it with a totalSize variable which increments itself:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>totalSize = 0</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>for filename in os.listdir(&#39;C:\\Windows\\System32&#39;):</strong></span></strong>
+    <span style="color:#212529">      </span><strong><span style="color:#212529"><strong>totalSize = totalSize + os.path.getsize(os.path.join(&#39;C:\\Windows\\System32&#39;, filename))</strong></span></strong>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>print(totalSize)</strong></span></strong>
+    <span style="color:#212529">1117846456</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Check Path Validity:</strong></span></strong></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.exists(&#39;C:\\Windows&#39;)</strong></span></strong>
+    <span style="color:#212529">True</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.exists(&#39;C:\\some_made_up_folder&#39;)</strong></span></strong>
+    <span style="color:#212529">False</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.isdir(&#39;C:\\Windows\\System32&#39;)</strong></span></strong>
+    <span style="color:#212529">True</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.isfile(&#39;C:\\Windows\\System32&#39;)</strong></span></strong>
+    <span style="color:#212529">False</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.isdir(&#39;C:\\Windows\\System32\\calc.exe&#39;)</strong></span></strong>
+    <span style="color:#212529">False</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.isfile(&#39;C:\\Windows\\System32\\calc.exe&#39;)</strong></span></strong>
+    <span style="color:#212529">True</span></pre>
+
+    <p><span style="color:#212529">Note that this also works for (attached) drives of all kinds:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.path.exists(&#39;F:\\&#39;)</strong></span></strong>
+    <span style="color:#212529">False</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Opening, reading, writing &amp; closing files:</strong></span></strong></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>helloFile = open(&#39;C:\\Users\\your_home_folder\\hello.txt&#39;, &#39;r&#39;)</strong></span></strong></pre>
+
+    <p><span style="color:#212529">#the &#39;r&#39; is optional, but we&#39;ll keep it for the sake of good form...</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>helloContent = helloFile.read()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>helloContent</strong></span></strong>
+    <span style="color:#212529">&#39;Hello world!&#39;</span></pre>
+
+    <p><span style="color:#212529">Readlines() will add a cute little \n at the end of each line of the *.txt document, thus making it more legible (better than one single, long string):</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>sonnetFile = open(&#39;sonnet29.txt&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>sonnetFile.readlines()</strong></span></strong>
+    <span style="color:#212529">[When, in disgrace with fortune and men&#39;s eyes,\n&#39;, &#39; I all alone beweep my</span>
+    <span style="color:#212529">outcast state,\n&#39;, And trouble deaf heaven with my bootless cries,\n&#39;, And</span>
+    <span style="color:#212529">look upon myself and curse my fate,&#39;]</span></pre>
+
+    <p><span style="color:#212529">To write to a file, wiping all previous content, add a &#39;w&#39; instead of an &#39;r&#39;. If you want to append text to an existing *.txt file, add an &#39;a&#39;:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile = open(&#39;bacon.txt&#39;, &#39;w&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile.write(&#39;Hello world!\n&#39;)</strong></span></strong>
+    <span style="color:#212529">13</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile.close()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile = open(&#39;bacon.txt&#39;, &#39;a&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile.write(&#39;Bacon is not a vegetable.&#39;)</strong></span></strong>
+    <span style="color:#212529">25</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile.close()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile = open(&#39;bacon.txt&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>content = baconFile.read()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile.close()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>print(content)</strong></span></strong>
+    <span style="color:#212529">Hello world!</span>
+    <span style="color:#212529">Bacon is not a vegetable.</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Shelve:</strong></span></strong></p>
+
+    <p><span style="color:#212529">You can save variables in your Python programs to binary shelf files using the </span><code><span style="color:#e83e8c">shelve</span></code><span style="color:#212529"> module. This way, your program can restore data to variables from the hard drive. </span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import shelve</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shelfFile = shelve.open(&#39;mydata&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>cats = [&#39;Zophie&#39;, &#39;Pooka&#39;, &#39;Simon&#39;]</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shelfFile[&#39;cats&#39;] = cats</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shelfFile.close()</strong></span></strong></pre>
+
+    <p><span style="color:#212529">Shelf values don&rsquo;t have to be opened in read or write mode&mdash;they can do both once opened.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shelfFile = shelve.open(&#39;mydata&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>type(shelfFile)</strong></span></strong>
+    <span style="color:#212529">&lt;class &#39;shelve.DbfilenameShelf&#39;&gt;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shelfFile[&#39;cats&#39;]</strong></span></strong>
+    <span style="color:#212529">[&#39;Zophie&#39;, &#39;Pooka&#39;, &#39;Simon&#39;]</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shelfFile.close()</strong></span></strong></pre>
+
+    <p><span style="color:#212529">Just like dictionaries, shelf values have </span><code><span style="color:#e83e8c">keys()</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">values()</span></code><span style="color:#212529">methods that will return list-like values of the keys and values in the shelf. Since these methods return list-like values instead of true lists, you should pass them to the </span><code><span style="color:#e83e8c">list()</span></code><span style="color:#212529">function to get them in list form:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shelfFile = shelve.open(&#39;mydata&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>list(shelfFile.keys())</strong></span></strong>
+    <span style="color:#212529">[&#39;cats&#39;]</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>list(shelfFile.values())</strong></span></strong>
+    <span style="color:#212529">[[&#39;Zophie&#39;, &#39;Pooka&#39;, &#39;Simon&#39;]]</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shelfFile.close()</strong></span></strong></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Saving Variables With pprint.pformat():</strong></span></strong></p>
+
+    <p><code><span style="color:#e83e8c">The pprint.pprint()</span></code><span style="color:#212529"> function will &ldquo;pretty print&rdquo; the contents of a list or dictionary to the screen, while the </span><code><span style="color:#e83e8c">pprint.pformat()</span></code><span style="color:#212529"> function will return this same text as a string instead of printing it. Not only is this string formatted to be easy to read, but it is also syntactically correct Python code. Say you have a dictionary stored in a variable and you want to save this variable and its contents for future use. Using </span><code><span style="color:#e83e8c">pprint.pformat()</span></code><span style="color:#212529"> will give you a string that you can write to </span><em><span style="color:#212529">.py</span></em><span style="color:#212529"> file. This file will be your very own module that you can import whenever you want to use the variable stored in it:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import pprint</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>cats = [{&#39;name&#39;: &#39;Zophie&#39;, &#39;desc&#39;: &#39;chubby&#39;}, {&#39;name&#39;: &#39;Pooka&#39;, &#39;desc&#39;: &#39;fluffy&#39;}]</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>pprint.pformat(cats)</strong></span></strong>
+    <span style="color:#212529">&quot;[{&#39;desc&#39;: &#39;chubby&#39;, &#39;name&#39;: &#39;Zophie&#39;}, {&#39;desc&#39;: &#39;fluffy&#39;, &#39;name&#39;: &#39;Pooka&#39;}]&quot;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>fileObj = open(&#39;myCats.py&#39;, &#39;w&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>fileObj.write(&#39;cats = &#39; + pprint.pformat(cats) + &#39;\n&#39;)</strong></span></strong>
+    <span style="color:#212529">83</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>fileObj.close()</strong></span></strong></pre>
+
+    <p><span style="color:#212529">You can then import these files into scripts.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import myCats</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>myCats.cats</strong></span></strong>
+    <span style="color:#212529">[{&#39;name&#39;: &#39;Zophie&#39;, &#39;desc&#39;: &#39;chubby&#39;}, {&#39;name&#39;: &#39;Pooka&#39;, &#39;desc&#39;: &#39;fluffy&#39;}]</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>myCats.cats[0]</strong></span></strong>
+    <span style="color:#212529">{&#39;name&#39;: &#39;Zophie&#39;, &#39;desc&#39;: &#39;chubby&#39;}</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>myCats.cats[0][&#39;name&#39;]</strong></span></strong>
+    <span style="color:#212529">&#39;Zophie&#39;</span></pre>
+
+    <p><span style="color:#212529">The benefit of creating a </span><em><span style="color:#212529">.py</span></em><span style="color:#212529"> file (as opposed to saving variables with the </span><code><span style="color:#e83e8c">shelve</span></code><span style="color:#212529"> module) is that because it is a text file, the contents of the file can be read and modified by anyone with a simple text editor. For most applications, however, saving data using the </span><code><span style="color:#e83e8c">shelve</span></code><span style="color:#212529">module is the preferred way to save variables to a file. Only basic data types such as integers, floats, strings, lists, and dictionaries can be written to a file as simple text. </span><code><span style="color:#e83e8c">File</span></code><span style="color:#212529"> objects, for example, cannot be encoded as text.</span></p>
+
+  </div>
+</article>
+
+
+<article class="content-section">
+  <div class="media-body">
+    <p><strong><span style="color:#e67e22"><strong>Shutil Module:</strong></span></strong></p>
+
+    <p><span style="color:#212529">Calling </span><code><span style="color:#e83e8c">shutil.copy(source, destination)</span></code><span style="color:#212529"> will copy the file at the path </span><code><span style="color:#e83e8c">source</span></code><span style="color:#212529"> to the folder at the path </span><code><span style="color:#e83e8c">destination</span></code><span style="color:#212529">. (Both </span><code><span style="color:#e83e8c">source </span></code><span style="color:#212529">and </span><code><span style="color:#e83e8c">destination</span></code><span style="color:#212529"> are strings.) If </span><code><span style="color:#e83e8c">destination</span></code><span style="color:#212529"> is a filename, it will be used as the new name of the copied file:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import shutil, os</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.chdir(&#39;C:\\&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shutil.copy(&#39;C:\\spam.txt&#39;, &#39;C:\\delicious&#39;)</strong></span></strong>
+    <span style="color:#212529">   &#39;C:\\delicious\\spam.txt&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shutil.copy(&#39;eggs.txt&#39;, &#39;C:\\delicious\\eggs2.txt&#39;)</strong></span></strong>
+    <span style="color:#212529">   &#39;C:\\delicious\\eggs2.txt&#39;</span></pre>
+
+    <p><span style="color:#212529">While </span><code><span style="color:#e83e8c">shutil.copy()</span></code><span style="color:#212529"> will copy a single file, </span><code><span style="color:#e83e8c">shutil.copytree()</span></code><span style="color:#212529"> will copy an entire folder and every folder and file contained in it:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import shutil, os</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.chdir(&#39;C:\\&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shutil.copytree(&#39;C:\\bacon&#39;, &#39;C:\\bacon_backup&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;C:\\bacon_backup&#39;</span></pre>
+
+    <p><span style="color:#212529">Calling </span><code><span style="color:#e83e8c">shutil.move(source, destination)</span></code><span style="color:#212529"> will move the file or folder at the path </span><code><span style="color:#e83e8c">source</span></code><span style="color:#212529"> to the path </span><code><span style="color:#e83e8c">destination</span></code><span style="color:#212529">:</span></p>
+
+    <p><span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import shutil</strong></span></strong></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>shutil.move(&#39;C:\\bacon.txt&#39;, &#39;C:\\eggs\\new_bacon.txt&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;C:\\eggs\\new_bacon.txt&#39;</span></pre>
+
+    <p><span style="color:#212529">Note: Both of the previous examples worked under the assumption that there was a folder </span><em><span style="color:#212529">eggs</span></em><span style="color:#212529"> in the </span><em><span style="color:#212529">C:\</span></em><span style="color:#212529">directory. But if there is no </span><em><span style="color:#212529">eggs</span></em><span style="color:#212529">folder, then </span><code><span style="color:#e83e8c">move()</span></code><span style="color:#212529"> will rename </span><em><span style="color:#212529">bacon.txt</span></em><span style="color:#212529"> to a file named </span><em><span style="color:#212529">eggs</span></em><span style="color:#212529">. - Furthermore, the folders that make up the destination must already exist, or else Python will throw an exception.</span></p>
+
+    <p><span style="color:#212529">You can delete a single file or a single empty folder with functions in the </span><code><span style="color:#e83e8c">os</span></code><span style="color:#212529"> module, whereas to delete a folder and all of its contents, you use the </span><code><span style="color:#e83e8c">shutil</span></code><span style="color:#212529"> module.</span></p>
+
+    <ul>
+    	<li>
+    	<p><span style="color:#212529">Calling </span><code><span style="color:#e83e8c">os.unlink(path)</span></code><span style="color:#212529"> will delete the file at </span><code><span style="color:#e83e8c">path</span></code><span style="color:#212529">.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Calling </span><code><span style="color:#e83e8c">os.rmdir(path)</span></code><span style="color:#212529"> will delete the folder at </span><code><span style="color:#e83e8c">path</span></code><span style="color:#212529">. This folder must be empty of any files or folders.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Calling </span><code><span style="color:#e83e8c">shutil.rmtree(path)</span></code><span style="color:#212529">will remove the folder at </span><code><span style="color:#e83e8c">path</span></code><span style="color:#212529">, and all files and folders it contains will also be deleted.</span></p>
+    	</li>
+    </ul>
+
+    <p><span style="color:#212529">It is dangerous to delete willy-nilly, thus it&#39;s recommended to test the code first:</span></p>
+
+    <pre>
+    <span style="color:#212529">import os</span>
+    <span style="color:#212529">for filename in os.listdir():</span>
+    <span style="color:#212529">    if filename.endswith(&#39;.rxt&#39;):</span>
+    <span style="color:#212529">        #os.unlink(filename)</span>
+    <span style="color:#212529">        print(filename)</span></pre>
+
+    <p><span style="color:#212529">A safer, alternative method is pip installing send2thrash:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import send2trash</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile = open(&#39;bacon.txt&#39;, &#39;a&#39;) # creates the file</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile.write(&#39;Bacon is not a vegetable.&#39;)</strong></span></strong>
+    <span style="color:#212529">25</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>baconFile.close()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>send2trash.send2trash(&#39;bacon.txt&#39;)</strong></span></strong></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Walking the directory tree:</strong></span></strong></p>
+
+    <pre>
+    <span style="color:#212529">import os</span>
+
+    <span style="color:#212529">for folderName, subfolders, filenames in os.walk(&#39;C:\\delicious&#39;):</span>
+    <span style="color:#212529">    print(&#39;The current folder is &#39; + folderName)</span>
+
+    <span style="color:#212529">    for subfolder in subfolders:</span>
+    <span style="color:#212529">        print(&#39;SUBFOLDER OF &#39; + folderName + &#39;: &#39; + subfolder)</span>
+    <span style="color:#212529">    for filename in filenames:</span>
+    <span style="color:#212529">        print(&#39;FILE INSIDE &#39; + folderName + &#39;: &#39;+ filename)</span>
+
+    <span style="color:#212529">    print(&#39;&#39;)</span></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">os.walk()</span></code><span style="color:#212529"> function is passed a single string value: the path of a folder.</span></p>
+
+    <p><span style="color:#212529">You can use </span><code><span style="color:#e83e8c">os.walk()</span></code><span style="color:#212529"> in a </span><code><span style="color:#e83e8c">for</span></code><span style="color:#212529"> loop statement to walk a directory tree. Unlike </span><code><span style="color:#e83e8c">range()</span></code><span style="color:#212529">, the </span><code><span style="color:#e83e8c">os.walk()</span></code><span style="color:#212529">function will return three values on each iteration through the loop:</span></p>
+
+    <ol>
+    	<li>
+    	<p><span style="color:#212529">A string of the current folder&rsquo;s name</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">A list of strings of the folders in the current folder</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">A list of strings of the files in the current folder</span></p>
+    	</li>
+    </ol>
+
+    <p><strong><span style="color:#e67e22"><strong>Compressing Files:</strong></span></strong></p>
+
+    <p><span style="color:#212529">To create a </span><code><span style="color:#e83e8c">ZipFile</span></code><span style="color:#212529"> object, call the </span><code><span style="color:#e83e8c">zipfile.ZipFile()</span></code><span style="color:#212529">function, passing it a string of the </span><em><span style="color:#212529">.zip</span></em><span style="color:#212529"> file&rsquo;s filename. Note that </span><code><span style="color:#e83e8c">zipfile</span></code><span style="color:#212529"> is the name of the Python module, and </span><code><span style="color:#e83e8c">ZipFile()</span></code><span style="color:#212529"> is the name of the function.</span></p>
+
+    <p><span style="color:#212529">For example, enter the following into the interactive shell:</span></p>
+
+    <p><span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import zipfile, os</strong></span></strong></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.chdir(&#39;C:\\&#39;)    # move to the folder with example.zip</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip = zipfile.ZipFile(&#39;example.zip&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip.namelist()</strong></span></strong>
+    <span style="color:#212529">[&#39;spam.txt&#39;, &#39;cats/&#39;, &#39;cats/catnames.txt&#39;, &#39;cats/zophie.jpg&#39;]</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spamInfo = exampleZip.getinfo(&#39;spam.txt&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spamInfo.file_size</strong></span></strong>
+    <span style="color:#212529">13908</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spamInfo.compress_size</strong></span></strong>
+    <span style="color:#212529">3828</span>
+    <span style="color:#212529">&gt;&gt;&gt;</span><strong><span style="color:#212529"><strong>&#39;Compressed file is %sx smaller!&#39; % (round(spamInfo.file_size / spamInfo.compress_size, 2))</strong></span></strong>
+    <span style="color:#212529">&#39;Compressed file is 3.63x smaller!&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip.close()</strong></span></strong></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">extractall()</span></code><span style="color:#212529"> method for </span><code><span style="color:#e83e8c">ZipFile</span></code><span style="color:#212529"> objects extracts all the files and folders from a ZIP file into the current working directory.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import zipfile, os</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>os.chdir(&#39;C:\\&#39;)    # move to the folder with example.zip</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip = zipfile.ZipFile(&#39;example.zip&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip.extractall()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip.close()</strong></span></strong></pre>
+
+    <p><span style="color:#212529">Optionally, you can pass a second argument to </span><code><span style="color:#e83e8c">extract()</span></code><span style="color:#212529"> to extract the file into a folder other than the current working directory. If this second argument is a folder that doesn&rsquo;t yet exist, Python will create the folder. The value that </span><code><span style="color:#e83e8c">extract()</span></code><span style="color:#212529"> returns is the absolute path to which the file was extracted.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip.extract(&#39;spam.txt&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;C:\\spam.txt&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip.extract(&#39;spam.txt&#39;, &#39;C:\\some\\new\\folders&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;C:\\some\\new\\folders\\spam.txt&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleZip.close()</strong></span></strong></pre>
+
+    <p><span style="color:#212529">To create your own compressed ZIP files, you must open the </span><code><span style="color:#e83e8c">ZipFile</span></code><span style="color:#212529"> object in </span><em><span style="color:#212529">write mode</span></em><span style="color:#212529"> by passing </span><code><span style="color:#e83e8c">&#39;w&#39;</span></code><span style="color:#212529"> as the second argument. </span></p>
+
+    <p><span style="color:#212529">When you pass a path to the </span><code><span style="color:#e83e8c">write()</span></code><span style="color:#212529"> method of a </span><code><span style="color:#e83e8c">ZipFile</span></code><span style="color:#212529">object, Python will compress the file at that path and add it into the ZIP file. The </span><code><span style="color:#e83e8c">write()</span></code><span style="color:#212529"> method&rsquo;s first argument is a string of the filename to add. The second argument is the </span><em><span style="color:#212529">compression type</span></em><span style="color:#212529">parameter, which tells the computer what algorithm it should use to compress the files; you can always just set this value to </span><code><span style="color:#e83e8c">zipfile.ZIP_DEFLATED</span></code><span style="color:#212529">. (This specifies the </span><em><span style="color:#212529">deflate</span></em><span style="color:#212529"> compression algorithm, which works well on all types of data.) Enter the following into the interactive shell:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import zipfile</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>newZip = zipfile.ZipFile(&#39;new.zip&#39;, &#39;w&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>newZip.write(&#39;spam.txt&#39;, compress_type=zipfile.ZIP_DEFLATED)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>newZip.close()</strong></span></strong></pre>
+
+  </div>
+</article>
+
+
+<article class="content-section">
+  <div class="media-body">
+    <p><strong><span style="color:#e67e22"><strong>Introduction:</strong></span></strong></p>
+
+    <p><span style="color:#212529">Regular expressions, called </span><em><span style="color:#212529">regexes</span></em><span style="color:#212529"> for short, are descriptions for a pattern of text. </span></p>
+
+    <p><span style="color:#212529">A </span><code><span style="color:#e83e8c">\d</span></code><span style="color:#212529"> in a regex stands for a digit character&mdash;that is, any single numeral 0 to 9. The regex </span><code><span style="color:#e83e8c">\d\d\d-\d\d\d-\d\d\d\d</span></code><span style="color:#212529"> is used by Python to match the same text the previous </span><code><span style="color:#e83e8c">isPhoneNumber()</span></code><span style="color:#212529"> function did: a string of three numbers, a hyphen, three more numbers, another hyphen, and four numbers. Any other string would not match the </span><code><span style="color:#e83e8c">\d\d\d-\d\d\d-\d\d \d\d</span></code><span style="color:#212529"> regex.</span></p>
+
+    <p><span style="color:#212529">Adding a </span><code><span style="color:#e83e8c">3 </span></code><span style="color:#212529">in curly brackets </span><code><span style="color:#e83e8c">{3}</span></code><span style="color:#212529"> after a pattern is like saying, &ldquo;Match this pattern three times.&rdquo; So the slightly shorter regex </span><code><span style="color:#e83e8c">\d{3}-\d{3}-\d{4}</span></code><span style="color:#212529"> also matches the correct phone number format.</span></p>
+
+    <p><span style="color:#212529">you can specify a range by writing a minimum, a comma, and a maximum in between the curly brackets. For example, the regex </span><code><span style="color:#e83e8c">(Ha){3,5}</span></code><span style="color:#212529"> will match </span><code><span style="color:#e83e8c">&#39;HaHaHa&#39;</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">&#39;HaHaHaHa&#39;</span></code><span style="color:#212529">, and </span><code><span style="color:#e83e8c">&#39;HaHaHaHaHa&#39;</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">All the regex functions in Python are in the </span><code><span style="color:#e83e8c">re</span></code><span style="color:#212529"> module.</span></p>
+
+    <pre>
+    <strong><span style="color:#212529"><strong>import re</strong></span></strong></pre>
+
+    <p><span style="color:#212529">Passing a string value representing your regular expression to </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529">returns a </span><code><span style="color:#e83e8c">Regex</span></code><span style="color:#212529"> pattern object (or simply, a </span><code><span style="color:#e83e8c">Regex</span></code><span style="color:#212529"> object).</span></p>
+
+    <pre>
+    <strong><span style="color:#212529"><strong>phoneNumRegex = re.compile(r&#39;\d{3}-\d{3}-\d{4}&#39;)</strong></span></strong></pre>
+
+    <p><span style="color:#212529">putting an </span><code><span style="color:#e83e8c">r</span></code><span style="color:#212529"> before the first quote of the string value, you can mark the string as a </span><em><span style="color:#212529">raw string</span></em><span style="color:#212529">, which does not escape characters.</span></p>
+
+    <p><span style="color:#212529">Since regular expressions frequently use backslashes in them, it is convenient to pass raw strings to the </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529"> function instead of typing extra backslashes. Typing </span><code><span style="color:#e83e8c">r&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;</span></code><span style="color:#212529"> is much easier than typing </span><code><span style="color:#e83e8c">&#39;\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d&#39;</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">A </span><code><span style="color:#e83e8c">Regex</span></code><span style="color:#212529"> object&rsquo;s </span><code><span style="color:#e83e8c">search()</span></code><span style="color:#212529"> method searches the string it is passed for any matches to the regex. The </span><code><span style="color:#e83e8c">search()</span></code><span style="color:#212529"> method will return </span><code><span style="color:#e83e8c">None</span></code><span style="color:#212529"> if the regex pattern is not found in the string. If the pattern </span><em><span style="color:#212529">is</span></em><span style="color:#212529"> found, the </span><code><span style="color:#e83e8c">search()</span></code><span style="color:#212529"> method returns a </span><code><span style="color:#e83e8c">Match</span></code><span style="color:#212529"> object. </span><code><span style="color:#e83e8c">Match</span></code><span style="color:#212529"> objects have a </span><code><span style="color:#e83e8c">group()</span></code><span style="color:#212529"> method that will return the actual matched text from the searched string. (I&rsquo;ll explain groups shortly.) For example, enter the following into the interactive shell:</span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>Match RegEx Objects:</strong></span></strong></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>phoneNumRegex = re.compile(r&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo = phoneNumRegex.search(&#39;My number is 415-555-4242.&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>print(&#39;Phone number found: &#39; + mo.group())</strong></span></strong>
+    <span style="color:#212529">Phone number found: 415-555-4242</span></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">mo</span></code><span style="color:#212529"> variable name is just a generic name to use for </span><code><span style="color:#e83e8c">Match</span></code><span style="color:#212529"> objects. </span></p>
+
+    <p><span style="color:#212529">Here, we pass our desired pattern to </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529"> and store the resulting </span><code><span style="color:#e83e8c">Regex</span></code><span style="color:#212529">object in </span><code><span style="color:#e83e8c">phoneNumRegex</span></code><span style="color:#212529">. Then we call </span><code><span style="color:#e83e8c">search()</span></code><span style="color:#212529"> on </span><code><span style="color:#e83e8c">phoneNumRegex</span></code><span style="color:#212529"> and pass </span><code><span style="color:#e83e8c">search()</span></code><span style="color:#212529">the string we want to search for a match. The result of the search gets stored in the variable </span><code><span style="color:#e83e8c">mo</span></code><span style="color:#212529">. In this example, we know that our pattern will be found in the string, so we know that a </span><code><span style="color:#e83e8c">Match</span></code><span style="color:#212529"> object will be returned. Knowing that </span><code><span style="color:#e83e8c">mo</span></code><span style="color:#212529"> contains a </span><code><span style="color:#e83e8c">Match</span></code><span style="color:#212529"> object and not the null value </span><code><span style="color:#e83e8c">None</span></code><span style="color:#212529">, we can call </span><code><span style="color:#e83e8c">group()</span></code><span style="color:#212529"> on </span><code><span style="color:#e83e8c">mo</span></code><span style="color:#212529"> to return the match. Writing </span><code><span style="color:#e83e8c">mo.group()</span></code><span style="color:#212529"> inside our print statement displays the whole match, </span><code><span style="color:#e83e8c">415-555-4242</span></code><span style="color:#212529">.</span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>Grouping with Parentheses:</strong></span></strong></p>
+
+    <p><span style="color:#212529">Say you want to separate the area code from the rest of the phone number. Adding parentheses will create </span><em><span style="color:#212529">groups</span></em><span style="color:#212529"> in the regex: </span><code><span style="color:#e83e8c">(\d\d\d)-(\d\d\d-\d\d\d\d)</span></code><span style="color:#212529">. Then you can use the </span><code><span style="color:#e83e8c">group()</span></code><span style="color:#212529"> match object method to grab the matching text from just one group.</span></p>
+
+    <p><span style="color:#212529">The first set of parentheses in a regex string will be group </span><code><span style="color:#e83e8c">1</span></code><span style="color:#212529">. The second set will be group </span><code><span style="color:#e83e8c">2</span></code><span style="color:#212529">. By passing the integer </span><code><span style="color:#e83e8c">1</span></code><span style="color:#212529"> or </span><code><span style="color:#e83e8c">2</span></code><span style="color:#212529"> to the </span><code><span style="color:#e83e8c">group()</span></code><span style="color:#212529"> match object method, you can grab different parts of the matched text. Passing </span><code><span style="color:#e83e8c">0</span></code><span style="color:#212529"> or nothing to the </span><code><span style="color:#e83e8c">group()</span></code><span style="color:#212529">method will return the entire matched text. Enter the following into the interactive shell:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>phoneNumRegex = re.compile(r&#39;(\d\d\d)-(\d\d\d-\d\d\d\d)&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo = phoneNumRegex.search(&#39;My number is 415-555-4242.&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group(1)</strong></span></strong>
+    <span style="color:#212529">&#39;415&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group(2)</strong></span></strong>
+    <span style="color:#212529">&#39;555-4242&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group(0)</strong></span></strong>
+    <span style="color:#212529">&#39;415-555-4242&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group()</strong></span></strong>
+    <span style="color:#212529">&#39;415-555-4242&#39;</span></pre>
+
+    <p><span style="color:#212529">If you would like to retrieve all the groups at once, use the </span><code><span style="color:#e83e8c">groups()</span></code><span style="color:#212529"> method&mdash;note the plural form for the name.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.groups()</strong></span></strong>
+    <span style="color:#212529">(&#39;415&#39;, &#39;555-4242&#39;)</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>areaCode, mainNumber = mo.groups()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>print(areaCode)</strong></span></strong>
+    <span style="color:#212529">415</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>print(mainNumber)</strong></span></strong>
+    <span style="color:#212529">555-4242</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Escaping parentheses:</strong></span></strong></p>
+
+    <p><span style="color:#212529">Parentheses have a special meaning in regular expressions, but what do you do if you need to match a parenthesis in your text? For instance, maybe the phone numbers you are trying to match have the area code set in parentheses. In this case, you need to escape the </span><code><span style="color:#e83e8c">(</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">)</span></code><span style="color:#212529"> characters with a backslash. Enter the following into the interactive shell:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>phoneNumRegex = re.compile(r&#39;(\(\d\d\d\)) (\d\d\d-\d\d\d\d)&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo = phoneNumRegex.search(&#39;My phone number is (415) 555-4242.&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group(1)</strong></span></strong>
+    <span style="color:#212529">&#39;(415)&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group(2)</strong></span></strong>
+    <span style="color:#212529">&#39;555-4242&#39;</span></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">\(</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">\)</span></code><span style="color:#212529"> escape characters in the raw string passed to </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529"> will match actual parenthesis characters.</span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>Pipes:</strong></span></strong></p>
+
+    <p><span style="color:#212529">Pipes ( </span><strong><span style="color:#212529"><strong>|</strong></span></strong><span style="color:#212529"> ) signify an &quot;or&quot; expression, and will select one possible regex or another, however one must be aware that if more regex&#39;es are found in a text, the pipe will favour the first one it encounters. See </span><strong><span style="color:#212529"><strong>findall() </strong></span></strong><span style="color:#212529">for a solution to this predicament. </span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>batRegex = re.compile(r&#39;Bat(man|mobile|copter|bat)&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo = batRegex.search(&#39;Batmobile lost a wheel&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group()</strong></span></strong>
+    <span style="color:#212529">&#39;Batmobile&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group(1)</strong></span></strong>
+    <span style="color:#212529">&#39;mobile&#39;</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Questionmark:</strong></span></strong></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">?</span></code><span style="color:#212529"> character flags the group that precedes it as an optional part of the pattern:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>batRegex = re.compile(r&#39;Bat(wo)?man&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo1 = batRegex.search(&#39;The Adventures of Batman&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo1.group()</strong></span></strong>
+    <span style="color:#212529">&#39;Batman&#39;</span>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo2 = batRegex.search(&#39;The Adventures of Batwoman&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo2.group()</strong></span></strong>
+    <span style="color:#212529">&#39;Batwoman&#39;</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Asterisk:</strong></span></strong></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">*</span></code><span style="color:#212529"> (called the </span><em><span style="color:#212529">star</span></em><span style="color:#212529"> or </span><em><span style="color:#212529">asterisk</span></em><span style="color:#212529">) means &ldquo;match zero or more&rdquo;</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>batRegex = re.compile(r&#39;Bat(wo)*man&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo1 = batRegex.search(&#39;The Adventures of Batman&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo1.group()</strong></span></strong>
+    <span style="color:#212529">&#39;Batman&#39;</span>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo2 = batRegex.search(&#39;The Adventures of Batwoman&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo2.group()</strong></span></strong>
+    <span style="color:#212529">&#39;Batwoman&#39;</span>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo3 = batRegex.search(&#39;The Adventures of Batwowowowoman&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo3.group()</strong></span></strong>
+    <span style="color:#212529">&#39;Batwowowowoman&#39;</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Plus:</strong></span></strong></p>
+
+    <p><span style="color:#212529">While </span><code><span style="color:#e83e8c">*</span></code><span style="color:#212529"> means &ldquo;match zero or more,&rdquo; the </span><code><span style="color:#e83e8c">+</span></code><span style="color:#212529"> (or </span><em><span style="color:#212529">plus</span></em><span style="color:#212529">) means &ldquo;match one or more.&rdquo; Unlike the star, which does not require its group to appear in the matched string, the group preceding a plus must appear </span><em><span style="color:#212529">at least once</span></em><span style="color:#212529">. </span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>Greed:</strong></span></strong></p>
+
+    <p><span style="color:#212529">Python&rsquo;s regular expressions are </span><em><span style="color:#212529">greedy</span></em><span style="color:#212529"> by default, which means that in ambiguous situations they will match the longest string possible. The </span><em><span style="color:#212529">non-greedy</span></em><span style="color:#212529"> version of the curly brackets, which matches the shortest string possible, has the closing curly bracket followed by a question mark.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>greedyHaRegex = re.compile(r&#39;(Ha){3,5}&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo1 = greedyHaRegex.search(&#39;HaHaHaHaHa&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo1.group()</strong></span></strong>
+    <span style="color:#212529">&#39;HaHaHaHaHa&#39;</span>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>nongreedyHaRegex = re.compile(r&#39;(Ha){3,5}?&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo2 = nongreedyHaRegex.search(&#39;HaHaHaHaHa&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo2.group()</strong></span></strong>
+    <span style="color:#212529">&#39;HaHaHa&#39;</span></pre>
+
+    <p><span style="color:#212529">Note that the question mark can have two meanings in regular expressions: declaring a nongreedy match or flagging an optional group. These meanings are entirely unrelated.</span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>The findall() method:</strong></span></strong></p>
+
+    <p><code><span style="color:#e83e8c">findall()</span></code><span style="color:#212529"> will not return a </span><code><span style="color:#e83e8c">Match</span></code><span style="color:#212529"> object but a list of strings&mdash;</span><em><span style="color:#212529">as long as there are no groups in the regular expression</span></em><span style="color:#212529">. </span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>phoneNumRegex = re.compile(r&#39;\d\d\d-\d\d\d-\d\d\d\d&#39;) # has no groups</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>phoneNumRegex.findall(&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;)</strong></span></strong>
+    <span style="color:#212529">[&#39;415-555-9999&#39;, &#39;212-555-0000&#39;]</span></pre>
+
+    <p><span style="color:#212529">If there </span><em><span style="color:#212529">are</span></em><span style="color:#212529"> groups in the regular expression, then </span><code><span style="color:#e83e8c">findall()</span></code><span style="color:#212529"> will return a list of tuples. </span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>phoneNumRegex = re.compile(r&#39;(\d\d\d)-(\d\d\d)-(\d\d\d\d)&#39;) # has groups</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>phoneNumRegex.findall(&#39;Cell: 415-555-9999 Work: 212-555-0000&#39;)</strong></span></strong>
+    <span style="color:#212529">[(&#39;415&#39;, &#39;555&#39;, &#39;9999&#39;), (&#39;212&#39;, &#39;555&#39;, &#39;0000&#39;)]</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Character Classes:</strong></span></strong></p>
+
+    <table border="1" cellpadding="2" cellspacing="3" style="width:643px">
+    	<thead>
+    		<tr>
+    			<th>
+    			<p>Shorthand character class</p>
+    			</th>
+    			<th>
+    			<p>Represents</p>
+    			</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\d</span></code></p>
+    			</td>
+    			<td>
+    			<p>Any numeric digit from 0 to 9.</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\D</span></code></p>
+    			</td>
+    			<td>
+    			<p>Any character that is <em>not</em> a numeric digit from 0 to 9.</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\w</span></code></p>
+    			</td>
+    			<td>
+    			<p>Any letter, numeric digit, or the underscore character. (Think of this as matching &ldquo;word&rdquo; characters.)</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\W</span></code></p>
+    			</td>
+    			<td>
+    			<p>Any character that is <em>not</em> a letter, numeric digit, or the underscore character.</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\s</span></code></p>
+    			</td>
+    			<td>
+    			<p>Any space, tab, or newline character. (Think of this as matching &ldquo;space&rdquo; characters.)</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">\S</span></code></p>
+    			</td>
+    			<td>
+    			<p>Any character that is <em>not</em> a space, tab, or newline.</p>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+
+    <p><span style="color:#212529">Character classes are nice for shortening regular expressions. The character class </span><code><span style="color:#e83e8c">[0-5]</span></code><span style="color:#212529"> will match only the numbers </span><code><span style="color:#e83e8c">0</span></code><span style="color:#212529"> to </span><code><span style="color:#e83e8c">5</span></code><span style="color:#212529">; this is much shorter than typing </span><code><span style="color:#e83e8c">(0|1|2|3|4|5)</span></code><span style="color:#212529">.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>xmasRegex = re.compile(r&#39;\d+\s\w+&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>xmasRegex.findall(&#39;12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7</strong></span></strong>
+    <strong><span style="color:#212529"><strong>swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge&#39;)</strong></span></strong>
+    <span style="color:#212529">[&#39;12 drummers&#39;, &#39;11 pipers&#39;, &#39;10 lords&#39;, &#39;9 ladies&#39;, &#39;8 maids&#39;, &#39;7 swans&#39;, &#39;6</span>
+    <span style="color:#212529">geese&#39;, &#39;5 rings&#39;, &#39;4 birds&#39;, &#39;3 hens&#39;, &#39;2 doves&#39;, &#39;1 partridge&#39;]</span></pre>
+
+    <p><span style="color:#212529">The regular expression </span><code><span style="color:#e83e8c">\d+\s\w+</span></code><span style="color:#212529">will match text that has one or more numeric digits (</span><code><span style="color:#e83e8c">\d+</span></code><span style="color:#212529">), followed by a whitespace character (</span><code><span style="color:#e83e8c">\s</span></code><span style="color:#212529">), followed by one or more letter/digit/underscore characters (</span><code><span style="color:#e83e8c">\w+</span></code><span style="color:#212529">). The </span><code><span style="color:#e83e8c">findall()</span></code><span style="color:#212529"> method returns all matching strings of the regex pattern in a list.</span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>Customise regex:</strong></span></strong></p>
+
+    <p><span style="color:#212529">The character class </span><code><span style="color:#e83e8c">[aeiouAEIOU]</span></code><span style="color:#212529"> will match any vowel, both lowercase and uppercase:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>vowelRegex = re.compile(r&#39;[aeiouAEIOU]&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>vowelRegex.findall(&#39;Robocop eats baby food. BABY FOOD.&#39;)</strong></span></strong>
+    <span style="color:#212529">[&#39;o&#39;, &#39;o&#39;, &#39;o&#39;, &#39;e&#39;, &#39;a&#39;, &#39;a&#39;, &#39;o&#39;, &#39;o&#39;, &#39;A&#39;, &#39;O&#39;, &#39;O&#39;]</span></pre>
+
+    <p><span style="color:#212529">You can also include ranges of letters or numbers by using a hyphen. For example, the character class </span><code><span style="color:#e83e8c">[a-zA-Z0-9]</span></code><span style="color:#212529"> will match all lowercase letters, uppercase letters, and numbers.</span></p>
+
+    <p><span style="color:#212529">Note that inside the square brackets, the normal regular expression symbols are not interpreted as such. This means you do not need to escape the </span><code><span style="color:#e83e8c">.</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">*</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">?</span></code><span style="color:#212529">, or </span><code><span style="color:#e83e8c">()</span></code><span style="color:#212529"> characters with a preceding backslash. For example, the character class </span><code><span style="color:#e83e8c">[0-5.]</span></code><span style="color:#212529"> will match digits </span><code><span style="color:#e83e8c">0</span></code><span style="color:#212529"> to </span><code><span style="color:#e83e8c">5</span></code><span style="color:#212529"> and a period. You do not need to write it as </span><code><span style="color:#e83e8c">[0-5\.]</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">By placing a caret character (</span><code><span style="color:#e83e8c">^</span></code><span style="color:#212529">) just after the character class&rsquo;s opening bracket, you can make a </span><em><span style="color:#212529">negative character class</span></em><span style="color:#212529">. A negative character class will match all the characters that are </span><em><span style="color:#212529">not</span></em><span style="color:#212529"> in the character class. For example, enter the following into the interactive shell:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>consonantRegex = re.compile(r&#39;[^aeiouAEIOU]&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>consonantRegex.findall(&#39;Robocop eats baby food. BABY FOOD.&#39;)</strong></span></strong>
+    <span style="color:#212529">[&#39;R&#39;, &#39;b&#39;, &#39;c&#39;, &#39;p&#39;, &#39; &#39;, &#39;t&#39;, &#39;s&#39;, &#39; &#39;, &#39;b&#39;, &#39;b&#39;, &#39;y&#39;, &#39; &#39;, &#39;f&#39;, &#39;d&#39;, &#39;.&#39;, &#39;</span>
+    <span style="color:#212529">&#39;, &#39;B&#39;, &#39;B&#39;, &#39;Y&#39;, &#39; &#39;, &#39;F&#39;, &#39;D&#39;, &#39;.&#39;]</span></pre>
+
+    <p><span style="color:#212529">You can also use the caret symbol (</span><code><span style="color:#e83e8c">^</span></code><span style="color:#212529">) at the start of a regex to indicate that a match must occur at the </span><em><span style="color:#212529">beginning</span></em><span style="color:#212529"> of the searched text. Likewise, you can put a dollar sign (</span><code><span style="color:#e83e8c">$</span></code><span style="color:#212529">) at the end of the regex to indicate the string must </span><em><span style="color:#212529">end</span></em><span style="color:#212529"> with this regex pattern. And you can use the </span><code><span style="color:#e83e8c">^</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">$</span></code><span style="color:#212529"> together to indicate that the entire string must match the regex&mdash;that is, it&rsquo;s not enough for a match to be made on some subset of the string.</span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>Wildcard:</strong></span></strong></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">.</span></code><span style="color:#212529"> (or </span><em><span style="color:#212529">dot</span></em><span style="color:#212529">) character in a regular expression is called a </span><em><span style="color:#212529">wildcard</span></em><span style="color:#212529"> and will match any character except for a newline. </span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>atRegex = re.compile(r&#39;.at&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>atRegex.findall(&#39;The cat in the hat sat on the flat mat.&#39;)</strong></span></strong>
+    <span style="color:#212529">[&#39;cat&#39;, &#39;hat&#39;, &#39;sat&#39;, &#39;lat&#39;, &#39;mat&#39;]</span></pre>
+
+    <p><span style="color:#212529">You can use the dot-star (</span><code><span style="color:#e83e8c">.*</span></code><span style="color:#212529">) to stand in for that &ldquo;anything.&rdquo; Remember that the dot character means &ldquo;any single character except the newline,&rdquo; and the star character means &ldquo;zero or more of the preceding character.&rdquo;</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>nameRegex = re.compile(r&#39;First Name: (.*) Last Name: (.*)&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo = nameRegex.search(&#39;First Name: Al Last Name: Sweigart&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group(1)</strong></span></strong>
+    <span style="color:#212529">&#39;Al&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group(2)</strong></span></strong>
+    <span style="color:#212529">&#39;Sweigart&#39;</span></pre>
+
+    <p><span style="color:#212529">To match any and all text in a </span><em><span style="color:#212529">nongreedy</span></em><span style="color:#212529"> fashion, use the dot, star, and question mark (</span><code><span style="color:#e83e8c">.*?</span></code><span style="color:#212529">). Like with curly brackets, the question mark tells Python to match in a nongreedy way.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>nongreedyRegex = re.compile(r&#39;&lt;.*?&gt;&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo = nongreedyRegex.search(&#39;&lt;To serve man&gt; for dinner.&gt;&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group()</strong></span></strong>
+    <span style="color:#212529">&#39;&lt;To serve man&gt;&#39;</span>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>greedyRegex = re.compile(r&#39;&lt;.*&gt;&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo = greedyRegex.search(&#39;&lt;To serve man&gt; for dinner.&gt;&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>mo.group()</strong></span></strong>
+    <span style="color:#212529">&#39;&lt;To serve man&gt; for dinner.&gt;&#39;</span></pre>
+
+    <p><span style="color:#212529">The dot-star will match everything except a newline. By passing </span><code><span style="color:#e83e8c">re.DOTALL</span></code><span style="color:#212529"> as the second argument to </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529">, you can make the dot character match </span><em><span style="color:#212529">all</span></em><span style="color:#212529"> characters, including the newline character:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>newlineRegex = re.compile(&#39;.*&#39;, re.DOTALL)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>newlineRegex.search(&#39;Serve the public trust.\nProtect the innocent.</strong></span></strong>
+    <strong><span style="color:#212529"><strong>\nUphold the law.&#39;).group()</strong></span></strong>
+    <span style="color:#212529">&#39;Serve the public trust.\nProtect the innocent.\nUphold the law.&#39;</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Case insensitive matching:</strong></span></strong></p>
+
+    <p><span style="color:#212529">To make your regex case-insensitive, you can pass </span><code><span style="color:#e83e8c">re.IGNORECASE</span></code><span style="color:#212529"> or </span><code><span style="color:#e83e8c">re.I</span></code><span style="color:#212529"> as a second argument to </span><code><span style="color:#e83e8c">re.compile():</span></code></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>robocop = re.compile(r&#39;robocop&#39;, re.I)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>robocop.search(&#39;Robocop is part man, part machine, all cop.&#39;).group()</strong></span></strong>
+    <span style="color:#212529">&#39;Robocop&#39;</span>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>robocop.search(&#39;ROBOCOP protects the innocent.&#39;).group()</strong></span></strong>
+    <span style="color:#212529">&#39;ROBOCOP&#39;</span>
+
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>robocop.search(&#39;Al, why does your programming book talk about robocop so much?&#39;).group()</strong></span></strong>
+    <span style="color:#212529">&#39;robocop&#39;</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>The sub() method:</strong></span></strong></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">sub()</span></code><span style="color:#212529"> method for </span><code><span style="color:#e83e8c">Regex</span></code><span style="color:#212529"> objects is passed two arguments. The first argument is a string to replace any matches. The second is the string for the regular expression. The </span><code><span style="color:#e83e8c">sub()</span></code><span style="color:#212529"> method returns a string with the substitutions applied.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>namesRegex = re.compile(r&#39;Agent \w+&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>namesRegex.sub(&#39;CENSORED&#39;, &#39;Agent Alice gave the secret documents to Agent Bob.&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;CENSORED gave the secret documents to CENSORED.&#39;</span></pre>
+
+    <p><span style="color:#212529">Sometimes you may need to use the matched text itself as part of the substitution. In the first argument to </span><code><span style="color:#e83e8c">sub()</span></code><span style="color:#212529">, you can type </span><code><span style="color:#e83e8c">\1</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">\2</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">\3</span></code><span style="color:#212529">, and so on, to mean &ldquo;Enter the text of group </span><code><span style="color:#e83e8c">1</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">2</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">3</span></code><span style="color:#212529">, and so on, in the substitution.&rdquo;</span></p>
+
+    <p><span style="color:#212529">For example, say you want to censor the names of the secret agents by showing just the first letters of their names. To do this, you could use the regex </span><code><span style="color:#e83e8c">Agent (\w)\w*</span></code><span style="color:#212529"> and pass </span><code><span style="color:#e83e8c">r&#39;\1****&#39;</span></code><span style="color:#212529"> as the first argument to </span><code><span style="color:#e83e8c">sub()</span></code><span style="color:#212529">. The </span><code><span style="color:#e83e8c">\1</span></code><span style="color:#212529"> in that string will be replaced by whatever text was matched by group </span><code><span style="color:#e83e8c">1</span></code><span style="color:#212529">&mdash;that is, the </span><code><span style="color:#e83e8c">(\w)</span></code><span style="color:#212529"> group of the regular expression.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>agentNamesRegex = re.compile(r&#39;Agent (\w)\w*&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>agentNamesRegex.sub(r&#39;\1****&#39;, &#39;Agent Alice told Agent Carol that Agent</strong></span></strong>
+    <strong><span style="color:#212529"><strong>Eve knew Agent Bob was a double agent.&#39;)</strong></span></strong>
+    <span style="color:#212529">A**** told C**** that E**** knew B**** was a double agent.&#39;</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Managing complex regexes:</strong></span></strong></p>
+
+    <p><span style="color:#212529">You can mitigate complex expressions by telling the </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529"> function to ignore whitespace and comments inside the regular expression string. This &ldquo;verbose mode&rdquo; can be enabled by passing the variable </span><code><span style="color:#e83e8c">re.VERBOSE</span></code><span style="color:#212529"> as the second argument to </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">Now instead of a hard-to-read regular expression like this:</span></p>
+
+    <pre>
+    <span style="color:#212529">phoneRegex = re.compile(r&#39;((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}</span>
+    <span style="color:#212529">(\s*(ext|x|ext.)\s*\d{2,5})?)&#39;)</span></pre>
+
+    <p><span style="color:#212529">you can spread the regular expression over multiple lines with comments like this:</span></p>
+
+    <pre>
+    <span style="color:#212529">phoneRegex = re.compile(r&#39;&#39;&#39;(</span>
+    <span style="color:#212529">    (\d{3}|\(\d{3}\))?            # area code</span>
+    <span style="color:#212529">    (\s|-|\.)?                    # separator</span>
+    <span style="color:#212529">    \d{3}                         # first 3 digits</span>
+    <span style="color:#212529">    (\s|-|\.)                     # separator</span>
+    <span style="color:#212529">    \d{4}                         # last 4 digits</span>
+    <span style="color:#212529">    (\s*(ext|x|ext.)\s*\d{2,5})?  # extension</span>
+    <span style="color:#212529">    )&#39;&#39;&#39;, re.VERBOSE)</span></pre>
+
+    <p><strong><span style="color:#e67e22"><strong>Single value limitation workaround:</strong></span></strong></p>
+
+    <p><span style="color:#212529">You can get around this limitation by combining the </span><code><span style="color:#e83e8c">re.IGNORECASE</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">re.DOTALL</span></code><span style="color:#212529">, and </span><code><span style="color:#e83e8c">re.VERBOSE</span></code><span style="color:#212529">variables using the pipe character (</span><code><span style="color:#e83e8c">|</span></code><span style="color:#212529">), which in this context is known as the </span><em><span style="color:#212529">bitwise or</span></em><span style="color:#212529"> operator.</span></p>
+
+    <p><span style="color:#212529">So if you want a regular expression that&rsquo;s case-insensitive </span><em><span style="color:#212529">and</span></em><span style="color:#212529"> includes newlines to match the dot character, you would form your </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529"> call like this:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>someRegexValue = re.compile(&#39;foo&#39;, re.IGNORECASE | re.DOTALL)</strong></span></strong></pre>
+
+    <p><span style="color:#212529">All three options for the second argument will look like this:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>someRegexValue = re.compile(&#39;foo&#39;, re.IGNORECASE | re.DOTALL | re.VERBOSE)</strong></span></strong></pre>
+
+    <p><span style="color:#212529">This syntax is a little old-fashioned and originates from early versions of Python. The details of the bitwise operators are beyond the scope of this book, but check out the resources at </span><em><a href="http://nostarch.com/automatestuff/"><span style="color:#007bff">http://nostarch.com/automatestuff/</span></a></em><em><span style="color:#212529"> </span></em><span style="color:#212529">for more information.</span></p>
+
+    <p>&nbsp;</p>
+
+  </div>
+</article>
+
+<article class="content-section">
+  <div class="media-body">
+    <p><strong><span style="color:#e67e22"><strong>Google maps app using Webbrowser, sys &amp; pyperclip:</strong></span></strong></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">webbrowser</span></code><span style="color:#212529"> module&rsquo;s </span><code><span style="color:#e83e8c">open()</span></code><span style="color:#212529">function can launch a new browser to a specified URL:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import webbrowser</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>webbrowser.open(&#39;http://inventwithpython.com/&#39;)</strong></span></strong></pre>
+
+    <p><span style="color:#212529">Let&#39;s dive straight into it: Set up a file, </span><em><span style="color:#212529">mapIt.py</span></em><span style="color:#212529"> so that when you run it from the command line, like so...</span></p>
+
+    <pre>
+    <span style="color:#212529">C:\&gt; mapit 870 Valencia St, San Francisco, CA 94110</span></pre>
+
+    <p><span style="color:#212529">If there are no command line arguments, then the program must know to use the contents of the clipboard:</span></p>
+
+    <pre>
+    <span style="color:#212529">#! python3</span>
+    <span style="color:#212529">&quot;&quot;&quot;</span>
+    <span style="color:#212529">mapIt.py - Launches a map in the browser using an address from the</span>
+    <span style="color:#212529">command line or clipboard.</span>
+    <span style="color:#212529">&quot;&quot;&quot;</span>
+
+    <span style="color:#212529">import webbrowser, sys, pyperclip</span>
+    <span style="color:#212529">if len(sys.argv) &gt; 1:</span>
+    <span style="color:#212529">    # Get address from command line.</span>
+    <span style="color:#212529">    address = &#39; &#39;.join(sys.argv[1:])</span>
+    <span style="color:#212529">else:</span>
+    <span style="color:#212529">    # Get address from clipboard.</span>
+    <span style="color:#212529">    address = pyperclip.paste()</span>
+
+    <span style="color:#212529">webbrowser.open(&#39;https://www.google.com/maps/place/&#39; + address)</span></pre>
+
+    <p><span style="color:#212529">import the </span><code><span style="color:#e83e8c">sys</span></code><span style="color:#212529">module for reading the potential command line arguments. The </span><code><span style="color:#e83e8c">sys.argv</span></code><span style="color:#212529"> variable stores a list of the program&rsquo;s filename and command line arguments. If this list has more than just the filename in it, then </span><code><span style="color:#e83e8c">len(sys.argv)</span></code><span style="color:#212529"> evaluates to an integer greater than </span><code><span style="color:#e83e8c">1</span></code><span style="color:#212529">, meaning that command line arguments have indeed been provided.</span></p>
+
+    <p><span style="color:#212529">Command line arguments are usually separated by spaces, but in this case, you want to interpret all of the arguments as a single string. Since </span><code><span style="color:#e83e8c">sys.argv</span></code><span style="color:#212529"> is a list of strings, you can pass it to the </span><code><span style="color:#e83e8c">join()</span></code><span style="color:#212529">method, which returns a single string value. You don&rsquo;t want the program name in this string, so instead of </span><code><span style="color:#e83e8c">sys.argv</span></code><span style="color:#212529">, you should pass </span><code><span style="color:#e83e8c">sys.argv[1:]</span></code><span style="color:#212529"> </span></p>
+
+    <p><span style="color:#212529">You can get the clipboard content with </span><code><span style="color:#e83e8c">pyperclip.paste()</span></code><span style="color:#212529"> and store it in a variable named </span><code><span style="color:#e83e8c">address</span></code><span style="color:#212529">. </span></p>
+
+    <p><strong><span style="color:#e67e22"><strong>Request module:</strong></span></strong></p>
+
+    <p><span style="color:#212529">From the command line, run </span><code><span style="color:#e83e8c"><strong>pip install requests</strong></span></code></p>
+
+    <p><span style="color:#212529">Then:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import requests</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>res = requests.get(&#39;https://automatetheboringstuff.com/files/rj.txt&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>type(res)</strong></span></strong>
+    <span style="color:#212529">   &lt;class &#39;requests.models.Response&#39;&gt;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>res.status_code == requests.codes.ok</strong></span></strong>
+    <span style="color:#212529">   True</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>len(res.text)</strong></span></strong>
+    <span style="color:#212529">   178981</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>print(res.text[:250])</strong></span></strong>
+    <span style="color:#212529">   The Project Gutenberg EBook of Romeo and Juliet, by William Shakespeare</span>
+
+    <span style="color:#212529">   This eBook is for the use of anyone anywhere at no cost and with</span>
+    <span style="color:#212529">   almost no restrictions whatsoever. You may copy it, give it away or</span>
+    <span style="color:#212529">   re-use it under the terms of the Proje</span></pre>
+
+    <p><span style="color:#212529">You can tell that the request for this web page succeeded by checking the </span><code><span style="color:#e83e8c">status_code</span></code><span style="color:#212529"> attribute of the </span><code><span style="color:#e83e8c">Response</span></code><span style="color:#212529"> object. If it is equal to the value of </span><code><span style="color:#e83e8c">requests.codes.ok</span></code><span style="color:#212529">, then everything went fine.</span></p>
+
+    <p><span style="color:#212529">If the request succeeded, the downloaded web page is stored as a string in the </span><code><span style="color:#e83e8c">Response</span></code><span style="color:#212529"> object&rsquo;s </span><code><span style="color:#e83e8c">text</span></code><span style="color:#212529"> variable. </span></p>
+
+    <p><span style="color:#212529">A simpler way to check for success is to call the </span><code><span style="color:#e83e8c">raise_for_status()</span></code><span style="color:#212529"> method on the </span><code><span style="color:#e83e8c">Response</span></code><span style="color:#212529"> object. This will raise an exception if there was an error downloading the file:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>res = requests.get(&#39;http://inventwithpython.com/page_that_does_not_exist&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>res.raise_for_status()</strong></span></strong>
+    <span style="color:#212529">Traceback (most recent call last):</span>
+    <span style="color:#212529">  File &quot;&lt;pyshell#138&gt;&quot;, line 1, in &lt;module&gt;</span>
+    <span style="color:#212529">    res.raise_for_status()</span>
+    <span style="color:#212529">  File &quot;C:\Python34\lib\site-packages\requests\models.py&quot;, line 773, in raise_for_status</span>
+    <span style="color:#212529">    raise HTTPError(http_error_msg, response=self)</span>
+    <span style="color:#212529">requests.exceptions.HTTPError: 404 Client Error: Not Found</span></pre>
+
+    <p><span style="color:#212529">If a failed download </span><em><span style="color:#212529">isn&rsquo;t</span></em><span style="color:#212529"> a deal breaker for your program, you can wrap the </span><code><span style="color:#e83e8c">raise_for_status()</span></code><span style="color:#212529"> line with </span><code><span style="color:#e83e8c">try</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">except</span></code><span style="color:#212529"> statements to handle this error case without crashing.</span></p>
+
+    <pre>
+    <span style="color:#212529">import requests</span>
+    <span style="color:#212529">res = requests.get(&#39;http://inventwithpython.com/page_that_does_not_exist&#39;)</span>
+    <span style="color:#212529">try:</span>
+    <span style="color:#212529">    res.raise_for_status()</span>
+    <span style="color:#212529">except Exception as exc:</span>
+    <span style="color:#212529">    print(&#39;There was a problem: %s&#39; % (exc))</span></pre>
+
+    <p><span style="color:#212529">Always call </span><code><span style="color:#e83e8c">raise_for_status()</span></code><span style="color:#212529">after calling </span><code><span style="color:#e83e8c">requests.get()</span></code><span style="color:#212529">. You want to be sure that the download has actually worked before your program continues.</span></p>
+
+    <p><span style="color:#212529">You can save the web page to a file on your hard drive with the standard </span><code><span style="color:#e83e8c">open()</span></code><span style="color:#212529"> function and </span><code><span style="color:#e83e8c">write()</span></code><span style="color:#212529"> method. There are some slight differences, though. First, you must open the file in </span><em><span style="color:#212529">write binary</span></em><span style="color:#212529"> mode by passing the string </span><code><span style="color:#e83e8c">&#39;wb&#39;</span></code><span style="color:#212529"> as the second argument to </span><code><span style="color:#e83e8c">open() </span></code><span style="color:#212529">in order to maintain the </span><em><span style="color:#212529">Unicode encoding</span></em><span style="color:#212529"> of the text.</span></p>
+
+    <p><span style="color:#212529">To write the web page to a file, you can use a </span><code><span style="color:#e83e8c">for</span></code><span style="color:#212529"> loop with the </span><code><span style="color:#e83e8c">Response</span></code><span style="color:#212529"> object&rsquo;s </span><code><span style="color:#e83e8c">iter_content()</span></code><span style="color:#212529">method.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import requests</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>res = requests.get(&#39;https://automatetheboringstuff.com/files/rj.txt&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>res.raise_for_status()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>playFile = open(&#39;RomeoAndJuliet.txt&#39;, &#39;wb&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>for chunk in res.iter_content(100000):</strong></span></strong>
+    <span style="color:#212529">        </span><strong><span style="color:#212529"><strong>playFile.write(chunk)</strong></span></strong>
+    <span style="color:#212529">100000</span>
+    <span style="color:#212529">78981</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>playFile.close()</strong></span></strong></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">iter_content()</span></code><span style="color:#212529"> method returns &ldquo;chunks&rdquo; of the content on each iteration through the loop. Each chunk is of the </span><em><span style="color:#212529">bytes</span></em><span style="color:#212529"> data type, and you get to specify how many bytes each chunk will contain. One hundred thousand bytes is generally a good size, so pass </span><code><span style="color:#e83e8c">100000</span></code><span style="color:#212529"> as the argument to </span><code><span style="color:#e83e8c">iter_content()</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">The file </span><em><span style="color:#212529">RomeoAndJuliet.txt</span></em><span style="color:#212529"> will now exist in the current working directory. Note that while the filename on the website was </span><em><span style="color:#212529">rj.txt</span></em><span style="color:#212529">, the file on your hard drive has a different filename. The </span><code><span style="color:#e83e8c">requests</span></code><span style="color:#212529">module simply handles downloading the contents of web pages. </span></p>
+
+    <p><span style="color:#212529">To review, here&rsquo;s the complete process for downloading and saving a file:</span></p>
+
+    <ol>
+    	<li>
+    	<p><span style="color:#212529">Call </span><code><span style="color:#e83e8c">requests.get()</span></code><span style="color:#212529"> to download the file.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Call </span><code><span style="color:#e83e8c">open()</span></code><span style="color:#212529"> with </span><code><span style="color:#e83e8c">&#39;wb&#39;</span></code><span style="color:#212529"> to create a new file in write binary mode.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Loop over the </span><code><span style="color:#e83e8c">Response</span></code><span style="color:#212529"> object&rsquo;s </span><code><span style="color:#e83e8c">iter_content()</span></code><span style="color:#212529"> method.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Call </span><code><span style="color:#e83e8c">write()</span></code><span style="color:#212529"> on each iteration to write the content to the file.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Call </span><code><span style="color:#e83e8c">close()</span></code><span style="color:#212529"> to close the file.</span></p>
+    	</li>
+    </ol>
+
+    <p><strong><span style="color:#e67e22"><strong>Have Some Beautiful Soup:</strong></span></strong></p>
+
+    <p><span style="color:#212529">While </span><code><span style="color:#e83e8c">beautifulsoup4</span></code><span style="color:#212529"> is the name used for pip installation, to import Beautiful Soup into your programme you run </span><code><span style="color:#e83e8c">import bs4</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">Example HTML (save it as &quot;example.html&quot;):</span></p>
+
+    <pre>
+    <span style="color:#212529">&lt;!-- This is the example.html example file. --&gt;</span>
+
+    <span style="color:#212529">&lt;html&gt;&lt;head&gt;&lt;title&gt;The Website Title&lt;/title&gt;&lt;/head&gt;</span>
+    <span style="color:#212529">&lt;body&gt;</span>
+    <span style="color:#212529">&lt;p&gt;Download my &lt;strong&gt;Python&lt;/strong&gt; book from &lt;a href=&quot;http://</span>
+    <span style="color:#212529">inventwithpython.com&quot;&gt;my website&lt;/a&gt;.&lt;/p&gt;</span>
+    <span style="color:#212529">&lt;p class=&quot;slogan&quot;&gt;Learn Python the easy way!&lt;/p&gt;</span>
+    <span style="color:#212529">&lt;p&gt;By &lt;span id=&quot;author&quot;&gt;Al Sweigart&lt;/span&gt;&lt;/p&gt;</span>
+    <span style="color:#212529">&lt;/body&gt;&lt;/html&gt;</span></pre>
+
+    <p><span style="color:#212529">Either enter the following into the interactive shell while your computer is connected to the Internet...</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import requests, bs4</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>res = requests.get(&#39;http://nostarch.com&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>res.raise_for_status()</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>noStarchSoup = bs4.BeautifulSoup(res.text)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>type(noStarchSoup)</strong></span></strong>
+    <span style="color:#212529">&lt;class &#39;bs4.BeautifulSoup&#39;&gt;</span></pre>
+
+    <p><span style="color:#212529">...OR work off of the harddrive using aforementioned example.html:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleFile = open(&#39;example.html&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleSoup = bs4.BeautifulSoup(exampleFile)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>type(exampleSoup)</strong></span></strong>
+    <span style="color:#212529">&lt;class &#39;bs4.BeautifulSoup&#39;&gt;</span></pre>
+
+    <p><span style="color:#212529">You can retrieve a web page element from a </span><code><span style="color:#e83e8c">BeautifulSoup</span></code><span style="color:#212529">object by calling the </span><code><span style="color:#e83e8c">select()</span></code><span style="color:#212529">method and passing a string of a CSS </span><em><span style="color:#212529">selector</span></em><span style="color:#212529"> for the element you are looking for. Selectors are like regular expressions: They specify a pattern to look for, in this case, in HTML pages instead of general text strings.</span></p>
+
+    <p><span style="color:#212529">Examples of CSS Selectors:</span></p>
+
+    <table border="1" cellpadding="2" cellspacing="3" style="width:643px">
+    	<thead>
+    		<tr>
+    			<th>
+    			<p>Selector passed to the <code><span style="color:#e83e8c">select()</span></code>method</p>
+    			</th>
+    			<th>
+    			<p>Will match...</p>
+    			</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">soup.select(&#39;div&#39;)</span></code></p>
+    			</td>
+    			<td>
+    			<p>All elements named <code><span style="color:#e83e8c">&lt;div&gt;</span></code></p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">soup.select(&#39;#author&#39;)</span></code></p>
+    			</td>
+    			<td>
+    			<p>The element with an <code><span style="color:#e83e8c">id</span></code> attribute of <code><span style="color:#e83e8c">author</span></code></p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">soup.select(&#39;.notice&#39;)</span></code></p>
+    			</td>
+    			<td>
+    			<p>All elements that use a CSS <code><span style="color:#e83e8c">class</span></code>attribute named <code><span style="color:#e83e8c">notice</span></code></p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">soup.select(&#39;div span&#39;)</span></code></p>
+    			</td>
+    			<td>
+    			<p>All elements named <code><span style="color:#e83e8c">&lt;span&gt;</span></code> that are within an element named <code><span style="color:#e83e8c">&lt;div&gt;</span></code></p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">soup.select(&#39;div &gt; span&#39;)</span></code></p>
+    			</td>
+    			<td>
+    			<p>All elements named <code><span style="color:#e83e8c">&lt;span&gt;</span></code> that are <em>directly</em> within an element named <code><span style="color:#e83e8c">&lt;div&gt;</span></code>, with no other element in between</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">soup.select(&#39;input[name]&#39;)</span></code></p>
+    			</td>
+    			<td>
+    			<p>All elements named <code><span style="color:#e83e8c">&lt;input&gt;</span></code> that have a <code><span style="color:#e83e8c">name</span></code> attribute with any value</p>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>
+    			<p><code><span style="color:#e83e8c">soup.select(&#39;input[type=&quot;button&quot;]&#39;)</span></code></p>
+    			</td>
+    			<td>
+    			<p>All elements named <code><span style="color:#e83e8c">&lt;input&gt;</span></code> that have an attribute named <code><span style="color:#e83e8c">type</span></code> with value <code><span style="color:#e83e8c">button</span></code></p>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+
+    <p><span style="color:#212529">The various selector patterns can be combined to make sophisticated matches. For example, </span><code><span style="color:#e83e8c">soup.select(&#39;p #author&#39;)</span></code><span style="color:#212529"> will match any element that has an </span><code><span style="color:#e83e8c">id </span></code><span style="color:#212529">attribute of </span><code><span style="color:#e83e8c">author</span></code><span style="color:#212529">, as long as it is also inside a </span><code><span style="color:#e83e8c">&lt;p&gt;</span></code><span style="color:#212529"> element.</span></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">select()</span></code><span style="color:#212529"> method will return a list of </span><code><span style="color:#e83e8c">Tag</span></code><span style="color:#212529"> objects, which is how Beautiful Soup represents an HTML element. The list will contain one </span><code><span style="color:#e83e8c">Tag</span></code><span style="color:#212529"> object for every match in the </span><code><span style="color:#e83e8c">BeautifulSoup</span></code><span style="color:#212529">object&rsquo;s HTML. Tag values can be passed to the </span><code><span style="color:#e83e8c">str()</span></code><span style="color:#212529"> function to show the HTML tags they represent. Tag values also have an </span><code><span style="color:#e83e8c">attrs</span></code><span style="color:#212529"> attribute that shows all the HTML attributes of the tag as a dictionary. </span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import bs4</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleFile = open(&#39;example.html&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>exampleSoup = bs4.BeautifulSoup(exampleFile.read())</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>elems = exampleSoup.select(&#39;#author&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>type(elems)</strong></span></strong>
+    <span style="color:#212529">&lt;class &#39;list&#39;&gt;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>len(elems)</strong></span></strong>
+    <span style="color:#212529">1</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>type(elems[0])</strong></span></strong>
+    <span style="color:#212529">&lt;class &#39;bs4.element.Tag&#39;&gt;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>elems[0].getText()</strong></span></strong>
+    <span style="color:#212529">&#39;Al Sweigart&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>str(elems[0])</strong></span></strong>
+    <span style="color:#212529">&#39;&lt;span id=&quot;author&quot;&gt;Al Sweigart&lt;/span&gt;&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>elems[0].attrs</strong></span></strong>
+    <span style="color:#212529">{&#39;id&#39;: &#39;author&#39;}</span></pre>
+
+    <p><span style="color:#212529">This code will pull the element with </span><code><span style="color:#e83e8c">id=&quot;author&quot;</span></code><span style="color:#212529"> out of our example HTML. We use </span><code><span style="color:#e83e8c">select(&#39;#author&#39;)</span></code><span style="color:#212529"> to return a list of all the elements with </span><code><span style="color:#e83e8c">id=&quot;author&quot;</span></code><span style="color:#212529">. We store this list of </span><code><span style="color:#e83e8c"><strong>Tag</strong></span></code><span style="color:#212529"> objects in the variable </span><code><span style="color:#e83e8c">elems</span></code><span style="color:#212529">, and </span><code><span style="color:#e83e8c">len(elems)</span></code><span style="color:#212529"> tells us there is one </span><code><span style="color:#e83e8c"><strong>Tag</strong></span></code><span style="color:#212529"> object in the list; there was one match. Calling </span><code><span style="color:#e83e8c">getText()</span></code><span style="color:#212529"> on the element returns the element&rsquo;s text, or inner HTML. The text of an element is the content between the opening and closing tags: in this case, </span><code><span style="color:#e83e8c">&#39;Al Sweigart&#39;</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">Passing the element to </span><code><span style="color:#e83e8c">str()</span></code><span style="color:#212529">returns a string with the starting and closing tags and the element&rsquo;s text. Finally, </span><code><span style="color:#e83e8c">attrs</span></code><span style="color:#212529"> gives us a dictionary with the element&rsquo;s attribute, </span><code><span style="color:#e83e8c">&#39;id&#39;</span></code><span style="color:#212529">, and the value of the </span><code><span style="color:#e83e8c">id</span></code><span style="color:#212529"> attribute, </span><code><span style="color:#e83e8c">&#39;author&#39;</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">You can also pull all the </span><code><span style="color:#e83e8c">&lt;p&gt;</span></code><span style="color:#212529">elements from the </span><code><span style="color:#e83e8c">BeautifulSoup</span></code><span style="color:#212529">object. Enter this into the interactive shell:</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>pElems = exampleSoup.select(&#39;p&#39;)</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>str(pElems[0])</strong></span></strong>
+    <span style="color:#212529">&#39;&lt;p&gt;Download my &lt;strong&gt;Python&lt;/strong&gt; book from &lt;a href=&quot;http://</span>
+    <span style="color:#212529">inventwithpython.com&quot;&gt;my website&lt;/a&gt;.&lt;/p&gt;&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>pElems[0].getText()</strong></span></strong>
+    <span style="color:#212529">&#39;Download my Python book from my website.&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>str(pElems[1])</strong></span></strong>
+    <span style="color:#212529">&#39;&lt;p class=&quot;slogan&quot;&gt;Learn Python the easy way!&lt;/p&gt;&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>pElems[1].getText()</strong></span></strong>
+    <span style="color:#212529">&#39;Learn Python the easy way!&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>str(pElems[2])</strong></span></strong>
+    <span style="color:#212529">&#39;&lt;p&gt;By &lt;span id=&quot;author&quot;&gt;Al Sweigart&lt;/span&gt;&lt;/p&gt;&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>pElems[2].getText()</strong></span></strong>
+    <span style="color:#212529">&#39;By Al Sweigart&#39;</span></pre>
+
+    <p><span style="color:#212529">This time, </span><code><span style="color:#e83e8c">select()</span></code><span style="color:#212529"> gives us a list of three matches, which we store in </span><code><span style="color:#e83e8c">pElems</span></code><span style="color:#212529">. Using </span><code><span style="color:#e83e8c">str()</span></code><span style="color:#212529"> on </span><code><span style="color:#e83e8c">pElems[0]</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">pElems[1]</span></code><span style="color:#212529">, and </span><code><span style="color:#e83e8c">pElems[2]</span></code><span style="color:#212529"> shows you each element as a string, and using </span><code><span style="color:#e83e8c">getText()</span></code><span style="color:#212529"> on each element shows you its text.</span></p>
+
+    <pre>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>import bs4</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>soup = bs4.BeautifulSoup(open(&#39;example.html&#39;))</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spanElem = soup.select(&#39;span&#39;)[0]</strong></span></strong>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>str(spanElem)</strong></span></strong>
+    <span style="color:#212529">&#39;&lt;span id=&quot;author&quot;&gt;Al Sweigart&lt;/span&gt;&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spanElem.get(&#39;id&#39;)</strong></span></strong>
+    <span style="color:#212529">&#39;author&#39;</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spanElem.get(&#39;some_nonexistent_addr&#39;) == None</strong></span></strong>
+    <span style="color:#212529">True</span>
+    <span style="color:#212529">&gt;&gt;&gt; </span><strong><span style="color:#212529"><strong>spanElem.attrs</strong></span></strong>
+    <span style="color:#212529">{&#39;id&#39;: &#39;author&#39;}</span></pre>
+
+    <p><span style="color:#212529">Here we use </span><code><span style="color:#e83e8c">select()</span></code><span style="color:#212529"> to find any </span><code><span style="color:#e83e8c">&lt;span&gt;</span></code><span style="color:#212529"> elements and then store the first matched element in </span><code><span style="color:#e83e8c">spanElem</span></code><span style="color:#212529">. Passing the attribute name </span><code><span style="color:#e83e8c">&#39;id&#39;</span></code><span style="color:#212529"> to </span><code><span style="color:#e83e8c">get()</span></code><span style="color:#212529"> returns the attribute&rsquo;s value, </span><code><span style="color:#e83e8c">&#39;author&#39;</span></code><span style="color:#212529">.</span></p>
+
+    <p><strong><span style="color:#212529"><strong>Let&#39;s build an &quot;I&#39;m feeling lucky&quot; Google search script:</strong></span></strong></p>
+
+    <p><span style="color:#212529">While inspecting the Google search page ,if you look up a little from the </span><code><span style="color:#e83e8c">&lt;a&gt; </span></code><span style="color:#212529">element, there is an element like this: </span><code><span style="color:#e83e8c">&lt;h3 class=&quot;r&quot;&gt;</span></code><span style="color:#212529">. Looking through the rest of the HTML source, it looks like the </span><code><span style="color:#e83e8c">r</span></code><span style="color:#212529">class is used only for search result links ;)</span></p>
+
+    <pre>
+    <span style="color:#212529">#! python3</span>
+    <span style="color:#212529"># lucky.py - Opens several Google search results.</span>
+
+    <span style="color:#212529">import requests, sys, webbrowser, bs4</span>
+
+    <span style="color:#212529">print(&#39;Googling...&#39;) # display text while downloading the Google page</span>
+    <span style="color:#212529">res = requests.get(&#39;http://google.com/search?q=&#39; + &#39; &#39;.join(sys.argv[1:]))</span>
+    <span style="color:#212529">res.raise_for_status()</span>
+
+    <span style="color:#212529"># Retrieve top search result links.</span>
+    <span style="color:#212529">soup = bs4.BeautifulSoup(res.text)</span>
+
+    <span style="color:#212529"># Open a browser tab for each result.</span>
+    <span style="color:#212529">linkElems = soup.select(&#39;.r a&#39;)</span>
+    <span style="color:#212529">numOpen = min(5, len(linkElems))</span>
+    <span style="color:#212529">for i in range(numOpen):</span>
+    <span style="color:#212529">    webbrowser.open(&#39;http://google.com&#39; + linkElems[i].get(&#39;href&#39;))</span></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">soup.select()</span></code><span style="color:#212529"> call returns a list of all the elements that matched your </span><code><span style="color:#e83e8c">&#39;.r a&#39;</span></code><span style="color:#212529"> selector, so the number of tabs you want to open is either </span><code><span style="color:#e83e8c">5</span></code><span style="color:#212529"> or the length of this list (whichever is smaller).</span></p>
+
+    <p><span style="color:#212529">The built-in Python function </span><code><span style="color:#e83e8c">min()</span></code><span style="color:#212529">returns the smallest of the integer or float arguments it is passed. </span></p>
+
+    <p><br />
+    &nbsp;</p>
+  </div>
+</article>
+
+<article class="content-section">
+  <div class="media-body">
+    <p><span style="color:#212529">Step 1: Program Design and Data Structures</span></p>
+
+    <p><span style="color:#212529">You want to be able to run this program with a command line argument that is the account&rsquo;s name&mdash;for instance, </span><em><span style="color:#212529">email</span></em><span style="color:#212529"> or </span><em><span style="color:#212529">blog</span></em><span style="color:#212529">. That account&rsquo;s password will be copied to the clipboard so that the user can paste it into a Password field. This way, the user can have long, complicated passwords without having to memorize them.</span></p>
+
+    <p><span style="color:#212529">Open a new file editor window and save the program as </span><em><span style="color:#212529">pw.py</span></em><span style="color:#212529">. You need to start the program with a </span><code><span style="color:#e83e8c">#!</span></code><span style="color:#212529">(</span><em><span style="color:#212529">shebang</span></em><span style="color:#212529">) line (see Appendix B) and should also write a comment that briefly describes the program. Since you want to associate each account&rsquo;s name with its password, you can store these as strings in a dictionary. The dictionary will be the data structure that organizes your account and password data. Make your program look like the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">#! python3</span>
+    <span style="color:#212529"># pw.py - An insecure password locker program.</span>
+
+    <span style="color:#212529">PASSWORDS = {&#39;email&#39;: &#39;F7minlBDDuvMJuxESSKHFhTxFtjVB6&#39;,</span>
+    <span style="color:#212529">             &#39;blog&#39;: &#39;VmALvQyKAxiVH5G8v01if1MLZF3sdt&#39;,</span>
+    <span style="color:#212529">             &#39;luggage&#39;: &#39;12345&#39;}</span></pre>
+
+    <p><span style="color:#212529">Step 2: Handle Command Line Arguments</span></p>
+
+    <p><span style="color:#212529">The command line arguments will be stored in the variable </span><code><span style="color:#e83e8c">sys.argv</span></code><span style="color:#212529">. (See Appendix B for more information on how to use command line arguments in your programs.) The first item in the </span><code><span style="color:#e83e8c">sys.argv</span></code><span style="color:#212529"> list should always be a string containing the program&rsquo;s filename (</span><code><span style="color:#e83e8c">&#39;pw.py&#39;</span></code><span style="color:#212529">), and the second item should be the first command line argument. For this program, this argument is the name of the account whose password you want. Since the command line argument is mandatory, you display a usage message to the user if they forget to add it (that is, if the </span><code><span style="color:#e83e8c">sys.argv</span></code><span style="color:#212529"> list has fewer than two values in it). Make your program look like the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">#! python3</span>
+    <span style="color:#212529"># pw.py - An insecure password locker program.</span>
+
+    <span style="color:#212529">PASSWORDS = {&#39;email&#39;: &#39;F7minlBDDuvMJuxESSKHFhTxFtjVB6&#39;,</span>
+    <span style="color:#212529">             &#39;blog&#39;: &#39;VmALvQyKAxiVH5G8v01if1MLZF3sdt&#39;,</span>
+    <span style="color:#212529">             &#39;luggage&#39;: &#39;12345&#39;}</span>
+
+    <strong><span style="color:#212529"><strong>import sys</strong></span></strong>
+    <strong><span style="color:#212529"><strong>if len(sys.argv) &lt; 2:</strong></span></strong>
+    <span style="color:#212529">    </span><strong><span style="color:#212529"><strong>print(&#39;Usage: python pw.py [account] - copy account password&#39;)</strong></span></strong>
+    <span style="color:#212529">    </span><strong><span style="color:#212529"><strong>sys.exit()</strong></span></strong>
+
+    <strong><span style="color:#212529"><strong>account = sys.argv[1]      # first command line arg is the account name</strong></span></strong></pre>
+
+    <p><span style="color:#212529">Step 3: Copy the Right Password</span></p>
+
+    <p><span style="color:#212529">Now that the account name is stored as a string in the variable </span><code><span style="color:#e83e8c">account</span></code><span style="color:#212529">, you need to see whether it exists in the </span><code><span style="color:#e83e8c">PASSWORDS</span></code><span style="color:#212529">dictionary as a key. If so, you want to copy the key&rsquo;s value to the clipboard using </span><code><span style="color:#e83e8c">pyperclip.copy()</span></code><span style="color:#212529">. (Since you&rsquo;re using the </span><code><span style="color:#e83e8c">pyperclip</span></code><span style="color:#212529">module, you need to import it.) Note that you don&rsquo;t actually </span><em><span style="color:#212529">need</span></em><span style="color:#212529">the </span><code><span style="color:#e83e8c">account</span></code><span style="color:#212529"> variable; you could just use </span><code><span style="color:#e83e8c">sys.argv[1]</span></code><span style="color:#212529"> everywhere </span><code><span style="color:#e83e8c">account</span></code><span style="color:#212529"> is used in this program. But a variable named </span><code><span style="color:#e83e8c">account</span></code><span style="color:#212529"> is much more readable than something cryptic like </span><code><span style="color:#e83e8c">sys.argv[1]</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">Make your program look like the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">#! python3</span>
+    <span style="color:#212529"># pw.py - An insecure password locker program.</span>
+    <span style="color:#212529">PASSWORDS = {&#39;email&#39;: &#39;F7minlBDDuvMJuxESSKHFhTxFtjVB6&#39;,</span>
+    <span style="color:#212529">             &#39;blog&#39;: &#39;VmALvQyKAxiVH5G8v01if1MLZF3sdt&#39;,</span>
+    <span style="color:#212529">             &#39;luggage&#39;: &#39;12345&#39;}</span>
+
+    <span style="color:#212529">import sys, </span><strong><span style="color:#212529"><strong>pyperclip</strong></span></strong>
+    <span style="color:#212529">if len(sys.argv) &lt; 2:</span>
+    <span style="color:#212529">    print(&#39;Usage: py pw.py [account] - copy account password&#39;)</span>
+    <span style="color:#212529">    sys.exit()</span>
+
+    <span style="color:#212529">account = sys.argv[1]   # first command line arg is the account name</span>
+
+    <strong><span style="color:#212529"><strong>if account in PASSWORDS:</strong></span></strong>
+    <span style="color:#212529">    </span><strong><span style="color:#212529"><strong>pyperclip.copy(PASSWORDS[account])</strong></span></strong>
+    <span style="color:#212529">    </span><strong><span style="color:#212529"><strong>print(&#39;Password for &#39; + account + &#39; copied to clipboard.&#39;)</strong></span></strong>
+    <strong><span style="color:#212529"><strong>else:</strong></span></strong>
+    <span style="color:#212529">    </span><strong><span style="color:#212529"><strong>print(&#39;There is no account named &#39; + account)</strong></span></strong></pre>
+
+    <p><span style="color:#212529">This new code looks in the </span><code><span style="color:#e83e8c">PASSWORDS</span></code><span style="color:#212529"> dictionary for the account name. If the account name is a key in the dictionary, we get the value corresponding to that key, copy it to the clipboard, and print a message saying that we copied the value. Otherwise, we print a message saying there&rsquo;s no account with that name.</span></p>
+
+    <p><span style="color:#212529">That&rsquo;s the complete script. Using the instructions in Appendix B for launching command line programs easily, you now have a fast way to copy your account passwords to the clipboard. You will have to modify the </span><code><span style="color:#e83e8c">PASSWORDS</span></code><span style="color:#212529"> dictionary value in the source whenever you want to update the program with a new password.</span></p>
+
+    <p><span style="color:#212529">Of course, you probably don&rsquo;t want to keep all your passwords in one place where anyone could easily copy them. But you can modify this program and use it to quickly copy regular text to the clipboard. Say you are sending out several emails that have many of the same stock paragraphs in common. You could put each paragraph as a value in the </span><code><span style="color:#e83e8c">PASSWORDS</span></code><span style="color:#212529"> dictionary (you&rsquo;d probably want to rename the dictionary at this point), and then you would have a way to quickly select and copy one of many standard pieces of text to the clipboard.</span></p>
+
+    <p><span style="color:#212529">On Windows, you can create a batch file to run this program with the WIN-R Run window. (For more about batch files, see Appendix B.) Type the following into the file editor and save the file as </span><em><span style="color:#212529">pw.bat</span></em><span style="color:#212529"> in the </span><em><span style="color:#212529">C:\Windows</span></em><span style="color:#212529"> folder:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">@py.exe C:\Python34\pw.py %*</span>
+    <span style="color:#212529">@pause</span></pre>
+
+    <p><span style="color:#212529">With this batch file created, running the password-safe program on Windows is just a matter of pressing WIN-R and typing </span><code><span style="color:#e83e8c">pw &lt;account name&gt;</span></code><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">Project: Adding Bullets to Wiki Markup</span></p>
+
+    <p><span style="color:#212529">When editing a Wikipedia article, you can create a bulleted list by putting each list item on its own line and placing a star in front. But say you have a really large list that you want to add bullet points to. You could just type those stars at the beginning of each line, one by one. Or you could automate this task with a short Python script.</span></p>
+
+    <p><span style="color:#212529">The </span><em><span style="color:#212529">bulletPointAdder.py</span></em><span style="color:#212529"> script will get the text from the clipboard, add a star and space to the beginning of each line, and then paste this new text to the clipboard. For example, if I copied the following text (for the Wikipedia article &ldquo;List of Lists of Lists&rdquo;) to the clipboard:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">Lists of animals</span>
+    <span style="color:#212529">Lists of aquarium life</span>
+    <span style="color:#212529">Lists of biologists by author abbreviation</span>
+    <span style="color:#212529">Lists of cultivars</span></pre>
+
+    <p><span style="color:#212529">and then ran the </span><em><span style="color:#212529">bulletPointAdder.py</span></em><span style="color:#212529"> program, the clipboard would then contain the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">* Lists of animals</span>
+    <span style="color:#212529">* Lists of aquarium life</span>
+    <span style="color:#212529">* Lists of biologists by author abbreviation</span>
+    <span style="color:#212529">* Lists of cultivars</span></pre>
+
+    <p><span style="color:#212529">This star-prefixed text is ready to be pasted into a Wikipedia article as a bulleted list.</span></p>
+
+    <p><span style="color:#212529">Step 1: Copy and Paste from the Clipboard</span></p>
+
+    <p><span style="color:#212529">You want the </span><em><span style="color:#212529">bulletPointAdder.py</span></em><span style="color:#212529">program to do the following:</span></p>
+
+    <ol>
+    	<li>
+    	<p><span style="color:#212529">Paste text from the clipboard</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Do something to it</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Copy the new text to the clipboard</span></p>
+    	</li>
+    </ol>
+
+    <p><span style="color:#212529">That second step is a little tricky, but steps 1 and 3 are pretty straightforward: They just involve the </span><code><span style="color:#e83e8c">pyperclip.copy()</span></code><span style="color:#212529"> and </span><code><span style="color:#e83e8c">pyperclip.paste()</span></code><span style="color:#212529"> functions. For now, let&rsquo;s just write the part of the program that covers steps 1 and 3. Enter the following, saving the program as </span><em><span style="color:#212529">bulletPointAdder.py</span></em><span style="color:#212529">:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">#! python3</span>
+    <span style="color:#212529"># bulletPointAdder.py - Adds Wikipedia bullet points to the start</span>
+    <span style="color:#212529"># of each line of text on the clipboard.</span>
+
+    <span style="color:#212529">import pyperclip</span>
+    <span style="color:#212529">text = pyperclip.paste()</span>
+
+    <span style="color:#212529"># TODO: Separate lines and add stars.</span>
+
+    <span style="color:#212529">pyperclip.copy(text)</span></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">TODO</span></code><span style="color:#212529"> comment is a reminder that you should complete this part of the program eventually. The next step is to actually implement that piece of the program.</span></p>
+
+    <p><span style="color:#212529">Step 2: Separate the Lines of Text and Add the Star</span></p>
+
+    <p><span style="color:#212529">The call to </span><code><span style="color:#e83e8c">pyperclip.paste()</span></code><span style="color:#212529">returns all the text on the clipboard as one big string. If we used the &ldquo;List of Lists of Lists&rdquo; example, the string stored in </span><code><span style="color:#e83e8c">text</span></code><span style="color:#212529"> would look like this:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">&#39;Lists of animals\nLists of aquarium life\nLists of biologists by author</span>
+    <span style="color:#212529">abbreviation\nLists of cultivars&#39;</span></pre>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">\n</span></code><span style="color:#212529"> newline characters in this string cause it to be displayed with multiple lines when it is printed or pasted from the clipboard. There are many &ldquo;lines&rdquo; in this one string value. You want to add a star to the start of each of these lines.</span></p>
+
+    <p><span style="color:#212529">You could write code that searches for each </span><code><span style="color:#e83e8c">\n</span></code><span style="color:#212529"> newline character in the string and then adds the star just after that. But it would be easier to use the </span><code><span style="color:#e83e8c">split()</span></code><span style="color:#212529"> method to return a list of strings, one for each line in the original string, and then add the star to the front of each string in the list.</span></p>
+
+    <p><span style="color:#212529">Make your program look like the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">#! python3</span>
+    <span style="color:#212529"># bulletPointAdder.py - Adds Wikipedia bullet points to the start</span>
+    <span style="color:#212529"># of each line of text on the clipboard.</span>
+
+    <span style="color:#212529">import pyperclip</span>
+    <span style="color:#212529">text = pyperclip.paste()</span>
+
+    <strong><span style="color:#212529"><strong># Separate lines and add stars.</strong></span></strong>
+    <strong><span style="color:#212529"><strong>lines = text.split(&#39;\n&#39;)</strong></span></strong>
+    <strong><span style="color:#212529"><strong>for i in range(len(lines)):    # loop through all indexes in the &quot;lines&quot; list</strong></span></strong>
+    <span style="color:#212529">    </span><strong><span style="color:#212529"><strong>lines[i] = &#39;* &#39; + lines[i] # add star to each string in &quot;lines&quot; list</strong></span></strong>
+
+    <span style="color:#212529">pyperclip.copy(text)</span></pre>
+
+    <p><span style="color:#212529">We split the text along its newlines to get a list in which each item is one line of the text. We store the list in </span><code><span style="color:#e83e8c">lines</span></code><span style="color:#212529"> and then loop through the items in </span><code><span style="color:#e83e8c">lines</span></code><span style="color:#212529">. For each line, we add a star and a space to the start of the line. Now each string in </span><code><span style="color:#e83e8c">lines</span></code><span style="color:#212529"> begins with a star.</span></p>
+
+    <p><span style="color:#212529">Step 3: Join the Modified Lines</span></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">lines</span></code><span style="color:#212529"> list now contains modified lines that start with stars. But </span><code><span style="color:#e83e8c">pyperclip.copy()</span></code><span style="color:#212529"> is expecting a single string value, not a list of string values. To make this single string value, pass </span><code><span style="color:#e83e8c">lines</span></code><span style="color:#212529"> into the </span><code><span style="color:#e83e8c">join()</span></code><span style="color:#212529"> method to get a single string joined from the list&rsquo;s strings. Make your program look like the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">#! python3</span>
+    <span style="color:#212529"># bulletPointAdder.py - Adds Wikipedia bullet points to the start</span>
+    <span style="color:#212529"># of each line of text on the clipboard.</span>
+
+    <span style="color:#212529">import pyperclip</span>
+    <span style="color:#212529">text = pyperclip.paste()</span>
+
+    <span style="color:#212529"># Separate lines and add stars.</span>
+    <span style="color:#212529">lines = text.split(&#39;\n&#39;)</span>
+    <span style="color:#212529">for i in range(len(lines)):    # loop through all indexes for &quot;lines&quot; list</span>
+    <span style="color:#212529">    lines[i] = &#39;* &#39; + lines[i] # add star to each string in &quot;lines&quot; list</span>
+    <strong><span style="color:#212529"><strong>text = &#39;\n&#39;.join(lines)</strong></span></strong>
+    <span style="color:#212529">pyperclip.copy(text)</span></pre>
+
+    <p><span style="color:#212529">When this program is run, it replaces the text on the clipboard with text that has stars at the start of each line. Now the program is complete, and you can try running it with text copied to the clipboard.</span></p>
+
+    <p><span style="color:#212529">Even if you don&rsquo;t need to automate this specific task, you might want to automate some other kind of text manipulation, such as removing trailing spaces from the end of lines or converting text to uppercase or lowercase. Whatever your needs, you can use the clipboard for input and output.</span></p>
+
+  </div>
+</article>
+
+
+<article class="content-section">
+  <div class="media-body">
+    <p><span style="color:#212529">Say your boss emails you thousands of files with American-style dates (MM-DD-YYYY) in their names and needs them renamed to European-style dates (DD-MM-YYYY). This boring task could take all day to do by hand! Let&rsquo;s write a program to do it instead.</span></p>
+
+    <p><span style="color:#212529">Here&rsquo;s what the program does:</span></p>
+
+    <ul>
+    	<li>
+    	<p><span style="color:#212529">It searches all the filenames in the current working directory for American-style dates.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">When one is found, it renames the file with the month and day swapped to make it European-style.</span></p>
+    	</li>
+    </ul>
+
+    <p><span style="color:#212529">This means the code will need to do the following:</span></p>
+
+    <ul>
+    	<li>
+    	<p><span style="color:#212529">Create a regex that can identify the text pattern of American-style dates.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Call </span><code><span style="color:#e83e8c">os.listdir()</span></code><span style="color:#212529"> to find all the files in the working directory.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">Loop over each filename, using the regex to check whether it has a date.</span></p>
+    	</li>
+    	<li>
+    	<p><span style="color:#212529">If it has a date, rename the file with </span><code><span style="color:#e83e8c">shutil.move()</span></code><span style="color:#212529">.</span></p>
+    	</li>
+    </ul>
+
+    <p><span style="color:#212529">For this project, open a new file editor window and save your code as </span><em><span style="color:#212529">renameDates.py</span></em><span style="color:#212529">.</span></p>
+
+    <h2><span style="color:#212529"><strong>Step 1: Create a Regex for American-Style Dates</strong></span></h2>
+
+    <p><span style="color:#212529">The first part of the program will need to import the necessary modules and create a regex that can identify MM-DD-YYYY dates. The to-do comments will remind you what&rsquo;s left to write in this program. Typing them as </span><code><span style="color:#e83e8c">TODO</span></code><span style="color:#212529">makes them easy to find using IDLE&rsquo;s CTRL-F find feature. Make your code look like the following:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">   #! python3</span>
+    <span style="color:#212529">   # renameDates.py - Renames filenames with American MM-DD-YYYY date format</span>
+    <span style="color:#212529">   # to European DD-MM-YYYY.</span>
+
+    <span style="color:#212529">❶ import shutil, os, re</span>
+
+    <span style="color:#212529">   # Create a regex that matches files with the American date format.</span>
+    <span style="color:#212529">❷ datePattern = re.compile(r&quot;&quot;&quot;^(.*?) # all text before the date</span>
+    <span style="color:#212529">       ((0|1)?\d)-                     # one or two digits for the month</span>
+    <span style="color:#212529">       ((0|1|2|3)?\d)-                 # one or two digits for the day</span>
+    <span style="color:#212529">       ((19|20)\d\d)                   # four digits for the year</span>
+    <span style="color:#212529">       (.*?)$                          # all text after the date</span>
+    <span style="color:#212529">❸     &quot;&quot;&quot;, re.VERBOSE)</span>
+
+    <span style="color:#212529">   # TODO: Loop over the files in the working directory.</span>
+
+    <span style="color:#212529">   # TODO: Skip files without a date.</span>
+
+    <span style="color:#212529">   # TODO: Get the different parts of the filename.</span>
+
+    <span style="color:#212529">   # TODO: Form the European-style filename.</span>
+
+    <span style="color:#212529">   # TODO: Get the full, absolute file paths.</span>
+
+    <span style="color:#212529">   # TODO: Rename the files.</span></pre>
+
+    <p><span style="color:#212529">From this chapter, you know the </span><code><span style="color:#e83e8c">shutil.move()</span></code><span style="color:#212529"> function can be used to rename files: Its arguments are the name of the file to rename and the new filename. Because this function exists in the </span><code><span style="color:#e83e8c">shutil</span></code><span style="color:#212529">module, you must import that module ❶.</span></p>
+
+    <p><span style="color:#212529">But before renaming the files, you need to identify which files you want to rename. Filenames with dates such as </span><em><span style="color:#212529">spam4-4-1984.txt</span></em><span style="color:#212529"> and </span><em><span style="color:#212529">01-03-2014eggs.zip</span></em><span style="color:#212529"> should be renamed, while filenames without dates such as </span><em><span style="color:#212529">littlebrother.epub</span></em><span style="color:#212529"> can be ignored.</span></p>
+
+    <p><span style="color:#212529">You can use a regular expression to identify this pattern. After importing the </span><code><span style="color:#e83e8c">re</span></code><span style="color:#212529"> module at the top, call </span><code><span style="color:#e83e8c">re.compile()</span></code><span style="color:#212529"> to create a </span><code><span style="color:#e83e8c">Regex</span></code><span style="color:#212529">object ❷. Passing </span><code><span style="color:#e83e8c">re.VERBOSE</span></code><span style="color:#212529"> for the second argument ❸ will allow whitespace and comments in the regex string to make it more readable.</span></p>
+
+    <p><span style="color:#212529">The regular expression string begins with </span><code><span style="color:#e83e8c">^(.*?)</span></code><span style="color:#212529"> to match any text at the beginning of the filename that might come before the date. The </span><code><span style="color:#e83e8c">((0|1)?\d)</span></code><span style="color:#212529"> group matches the month. The first digit can be either </span><code><span style="color:#e83e8c">0</span></code><span style="color:#212529"> or </span><code><span style="color:#e83e8c">1</span></code><span style="color:#212529">, so the regex matches </span><code><span style="color:#e83e8c">12</span></code><span style="color:#212529"> for December but also </span><code><span style="color:#e83e8c">02</span></code><span style="color:#212529"> for February. This digit is also optional so that the month can be </span><code><span style="color:#e83e8c">04</span></code><span style="color:#212529"> or </span><code><span style="color:#e83e8c">4</span></code><span style="color:#212529"> for April. The group for the day is </span><code><span style="color:#e83e8c">((0|1|2|3)?\d)</span></code><span style="color:#212529"> and follows similar logic; </span><code><span style="color:#e83e8c">3</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">03</span></code><span style="color:#212529">, and </span><code><span style="color:#e83e8c">31</span></code><span style="color:#212529"> are all valid numbers for days. (Yes, this regex will accept some invalid dates such as </span><code><span style="color:#e83e8c">4-31-2014</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">2-29-2013</span></code><span style="color:#212529">, and </span><code><span style="color:#e83e8c">0-15-2014</span></code><span style="color:#212529">. Dates have a lot of thorny special cases that can be easy to miss. But for simplicity, the regex in this program works well enough.)</span></p>
+
+    <p><span style="color:#212529">While 1885 is a valid year, you can just look for years in the 20th or 21st century. This will keep your program from accidentally matching nondate filenames with a date-like format, such as </span><em><span style="color:#212529">10-10-1000.txt</span></em><span style="color:#212529">.</span></p>
+
+    <p><span style="color:#212529">The </span><code><span style="color:#e83e8c">(.*?)$</span></code><span style="color:#212529"> part of the regex will match any text that comes after the date.</span></p>
+
+    <h2><span style="color:#212529"><strong>Step 2: Identify the Date Parts from the Filenames</strong></span></h2>
+
+    <p><span style="color:#212529">Next, the program will have to loop over the list of filename strings returned from </span><code><span style="color:#e83e8c">os.listdir()</span></code><span style="color:#212529"> and match them against the regex. Any files that do not have a date in them should be skipped. For filenames that have a date, the matched text will be stored in several variables. Fill in the first three </span><code><span style="color:#e83e8c">TODO</span></code><span style="color:#212529">s in your program with the following code:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">   #! python3</span>
+    <span style="color:#212529">   # renameDates.py - Renames filenames with American MM-DD-YYYY date format</span>
+    <span style="color:#212529">   # to European DD-MM-YYYY.</span>
+
+    <span style="color:#212529">   </span><span style="color:#212529">--</span><em><span style="color:#212529">snip</span></em><span style="color:#212529">--</span>
+
+    <span style="color:#212529">   </span><strong><span style="color:#212529"><strong># Loop over the files in the working directory.</strong></span></strong>
+    <span style="color:#212529">   </span><strong><span style="color:#212529"><strong>for amerFilename in os.listdir(&#39;.&#39;):</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>mo = datePattern.search(amerFilename)</strong></span></strong>
+
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong># Skip files without a date.</strong></span></strong>
+    <span style="color:#212529">❶     </span><strong><span style="color:#212529"><strong>if mo == None:</strong></span></strong>
+    <span style="color:#212529">❷         </span><strong><span style="color:#212529"><strong>continue</strong></span></strong>
+
+    <span style="color:#212529">❸     </span><strong><span style="color:#212529"><strong># Get the different parts of the filename.</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>beforePart = mo.group(1)</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>monthPart  = mo.group(2)</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>dayPart    = mo.group(4)</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>yearPart   = mo.group(6)</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>afterPart  = mo.group(8)</strong></span></strong>
+
+    <span style="color:#212529">   </span><span style="color:#212529">--</span><em><span style="color:#212529">snip</span></em><span style="color:#212529">--</span></pre>
+
+    <p><span style="color:#212529">If the </span><code><span style="color:#e83e8c">Match</span></code><span style="color:#212529"> object returned from the </span><code><span style="color:#e83e8c">search()</span></code><span style="color:#212529"> method is </span><code><span style="color:#e83e8c">None</span></code><span style="color:#212529"> ❶, then the filename in </span><code><span style="color:#e83e8c">amerFilename</span></code><span style="color:#212529">does not match the regular expression. The </span><code><span style="color:#e83e8c">continue</span></code><span style="color:#212529">statement ❷ will skip the rest of the loop and move on to the next filename.</span></p>
+
+    <p><span style="color:#212529">Otherwise, the various strings matched in the regular expression groups are stored in variables named </span><code><span style="color:#e83e8c">beforePart</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">monthPart</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">dayPart</span></code><span style="color:#212529">, </span><code><span style="color:#e83e8c">yearPart</span></code><span style="color:#212529">, and </span><code><span style="color:#e83e8c">afterPart</span></code><span style="color:#212529">❸. The strings in these variables will be used to form the European-style filename in the next step.</span></p>
+
+    <p><span style="color:#212529">To keep the group numbers straight, try reading the regex from the beginning and count up each time you encounter an opening parenthesis. Without thinking about the code, just write an outline of the regular expression. This can help you visualize the groups. For example:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">datePattern = re.compile(r&quot;&quot;&quot;^(</span><strong><span style="color:#212529"><strong>1</strong></span></strong><span style="color:#212529">) # all text before the date</span>
+    <span style="color:#212529">    </span><span style="color:#212529">(</span><strong><span style="color:#212529"><strong>2</strong></span></strong><span style="color:#212529"> (</span><strong><span style="color:#212529"><strong>3</strong></span></strong><span style="color:#212529">) )-                     # one or two digits for the month</span>
+    <span style="color:#212529">    </span><span style="color:#212529">(</span><strong><span style="color:#212529"><strong>4</strong></span></strong><span style="color:#212529"> (</span><strong><span style="color:#212529"><strong>5</strong></span></strong><span style="color:#212529">) )-                     # one or two digits for the day</span>
+    <span style="color:#212529">    </span><span style="color:#212529">(</span><strong><span style="color:#212529"><strong>6</strong></span></strong><span style="color:#212529"> (</span><strong><span style="color:#212529"><strong>7</strong></span></strong><span style="color:#212529">) )                      # four digits for the year</span>
+    <span style="color:#212529">    </span><span style="color:#212529">(</span><strong><span style="color:#212529"><strong>8</strong></span></strong><span style="color:#212529">)$                          # all text after the date</span>
+    <span style="color:#212529">    &quot;&quot;&quot;, re.VERBOSE)</span></pre>
+
+    <p><span style="color:#212529">Here, the numbers </span><code><span style="color:#e83e8c"><strong>1</strong></span></code><span style="color:#212529"> through </span><code><span style="color:#e83e8c"><strong>8</strong></span></code><span style="color:#212529">represent the groups in the regular expression you wrote. Making an outline of the regular expression, with just the parentheses and group numbers, can give you a clearer understanding of your regex before you move on with the rest of the program.</span></p>
+
+    <h2><span style="color:#212529"><strong>Step 3: Form the New Filename and Rename the Files</strong></span></h2>
+
+    <p><span style="color:#212529">As the final step, concatenate the strings in the variables made in the previous step with the European-style date: The date comes before the month. Fill in the three remaining </span><code><span style="color:#e83e8c">TODO</span></code><span style="color:#212529">s in your program with the following code:</span></p>
+
+    <p>&nbsp;</p>
+
+    <pre>
+    <span style="color:#212529">   #! python3</span>
+    <span style="color:#212529">   # renameDates.py - Renames filenames with American MM-DD-YYYY date format</span>
+    <span style="color:#212529">   # to European DD-MM-YYYY.</span>
+
+    <span style="color:#212529">   </span><span style="color:#212529">--</span><em><span style="color:#212529">snip</span></em><span style="color:#212529">--</span>
+
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong># Form the European-style filename.</strong></span></strong>
+    <span style="color:#212529">❶     </span><strong><span style="color:#212529"><strong>euroFilename = beforePart + dayPart + &#39;-&#39; + monthPart + &#39;-&#39; + yearPart +</strong></span></strong>
+    <span style="color:#212529">                      </span><strong><span style="color:#212529"><strong>afterPart</strong></span></strong>
+
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong># Get the full, absolute file paths.</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>absWorkingDir = os.path.abspath(&#39;.&#39;)</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>amerFilename = os.path.join(absWorkingDir, amerFilename)</strong></span></strong>
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong>euroFilename = os.path.join(absWorkingDir, euroFilename)</strong></span></strong>
+
+    <span style="color:#212529">       </span><strong><span style="color:#212529"><strong># Rename the files.</strong></span></strong>
+    <span style="color:#212529">❷     </span><strong><span style="color:#212529"><strong>print(&#39;Renaming &quot;%s&quot; to &quot;%s&quot;...&#39; % (amerFilename, euroFilename))</strong></span></strong>
+    <span style="color:#212529">❸     </span><strong><span style="color:#212529"><strong>#shutil.move(amerFilename, euroFilename)   # uncomment after testing</strong></span></strong></pre>
+
+    <p><span style="color:#212529">Store the concatenated string in a variable named </span><code><span style="color:#e83e8c">euroFilename</span></code><span style="color:#212529"> ❶. Then, pass the original filename in </span><code><span style="color:#e83e8c">amerFilename</span></code><span style="color:#212529"> and the new </span><code><span style="color:#e83e8c">euroFilename</span></code><span style="color:#212529"> variable to the </span><code><span style="color:#e83e8c">shutil.move()</span></code><span style="color:#212529"> function to rename the file ❸.</span></p>
+
+    <p><span style="color:#212529">This program has the </span><code><span style="color:#e83e8c">shutil.move()</span></code><span style="color:#212529"> call commented out and instead prints the filenames that will be renamed ❷. Running the program like this first can let you double-check that the files are renamed correctly. Then you can uncomment the </span><code><span style="color:#e83e8c">shutil.move()</span></code><span style="color:#212529">call and run the program again to actually rename the files.</span></p>
+
+  </div>
+</article>
+{% endblock %}
+
+

@@ -1,0 +1,13 @@
+{% extends 'vault/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+  <h4>login</h4>
+  <hr/>
+  <form class="" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="btn btn-secondary ml-2 mt-2 mr-2 mb-2" type="submit">login</button><br/>
+  </form>
+</div>
+{% endblock %}

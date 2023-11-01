@@ -1,0 +1,13 @@
+{% extends 'vault/base.html' %}
+{% block content %}
+<article class="media content-section">
+  <div class="media-body">
+    <h4>you've been logged out</h4>
+    <hr/>
+    <!-- <div class="border-top pt-3"> -->
+      <a class="btn btn-secondary ml-1 mb-2" href="{% url 'account:login' %}">log in again</a>
+    <!-- </div> -->
+  </div>
+</article>
+{% endblock %}
+

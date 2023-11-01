@@ -1,0 +1,48 @@
+{% extends 'vault/base.html' %}
+{% block content %}
+
+{% for post in posts %}
+  <article class="content-section">
+    <div class="media-body">
+        <h2><a class="article-title" href="{% url 'blog:post-detail' post.slug %}">{{ post.title }}</a></h2>
+        <span style="margin-left: 21px; padding: 3px 6px; border-radius:6px; color:#FFF; background-color:#FFA826;">{{ post.category }}</span>
+        <p>
+        {{ post.content|safe|truncatewords_html:50|truncatechars_html:360 }}
+        </p>
+    </div>
+  </article>
+  {% empty %}
+  <div class="content-section">
+    <div class="article-metadata">
+      <h4><a href="{% url 'blog:post-create' %}">add a post</a> to get things going!</h4>
+    </div>
+    <p>
+      <small>
+        Hint: push the 'create' button to create posts
+      </small>
+    </p>
+  </div>
+{% endfor %}
+<div class="container" align="center">
+{% if is_paginated %}
+  {% if page_obj.has_previous %}
+        <a class="btn btn-secondary mb-4" href="?page=1"><<</a>
+        <a class="btn btn-secondary mb-4" href="?page={{ page_obj.previous_page_number }}"><</a>
+  {% endif %}
+  {% for num in page_obj.paginator.page_range %}
+    {% if page_obj.number == num %}
+    <!-- <a class="btn btn-secondary mb-4" href="?page={{ num }}">{{ num }}</a> -->
+    <a class="btn btn-secondary active mb-4" href="?page={{ num }}" aria-pressed="true">{{ num }}</a>
+    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+      <!-- <a class="btn btn-secondary mb-4" href="?page={{ num }}">{{ num }}</a> -->
+      <a class="btn btn-secondary mb-4" href="?page={{ num }}" aria-pressed="true">{{ num }}</a>
+    {% endif %}
+  {% endfor %}
+  {% if page_obj.has_next %}
+    <a class="btn btn-secondary mb-4" href="?page={{ page_obj.next_page_number }}">></a>
+    <a class="btn btn-secondary mb-4" href="?page={{ page_obj.paginator.num_pages }}">>></a>
+  {% endif %}
+{% endif %}
+</div>
+
+{% endblock %}

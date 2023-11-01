@@ -1,0 +1,18 @@
+{% extends 'vault/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+  <div class="content-section">
+    <form class="" method="POST">
+      {% csrf_token %}
+      <!-- <fieldset class="form-group"> -->
+        <!-- <legend class="border-bottom mb-4">blog post</legend> -->
+        {{ form.media }}
+        {{ form|crispy }}
+      <!-- </fieldset> -->
+      <div class="form-group">
+        <button class="btn btn-secondary ml-2 mt-2 mr-2 mb-2" type="submit">post</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
+

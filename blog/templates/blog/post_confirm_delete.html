@@ -1,0 +1,30 @@
+{% extends 'vault/base.html' %}
+{% block content %}
+  <div class="content-section">
+    <form class="" method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <!-- <legend class="border-bottom mb-4">delete post</legend> -->
+        <h4>are you sure you want to delete the post</h4>
+        <h4 class="ml-5">'<a href="{% url 'blog:post-detail' object.slug %}">{{ object.title }}</a>'?</h4>
+      </fieldset>
+      <div class="form-group">
+        <button class="btn btn-danger" type="submit">delete</button>
+        <a class="btn btn-secondary" href="{% url 'blog:post-detail' object.slug %}">cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}
+
+{% block box_content %}
+<h4>box bar</h4>
+<p class='text-muted'>box functions: pending...
+  <!-- <ul class="list-group">
+    <li class="list-group-item list-group-item-light">Latest Posts</li>
+    <li class="list-group-item list-group-item-light">Advertisements</li>
+    <li class="list-group-item list-group-item-light">Latest Posts</li>
+    <li class="list-group-item list-group-item-light">Calendars</li>
+    <li class="list-group-item list-group-item-light">etc</li>
+  </ul> -->
+</p>
+{% endblock %}

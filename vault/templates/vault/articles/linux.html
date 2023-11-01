@@ -1,0 +1,211 @@
+{% extends 'vault/base.html' %}
+{% load static %}
+{% block content %}
+<article class="content-section">
+  <div class="media-body">
+    <h4>ubuntu terminal cheat sheet</h4>
+    <hr/>
+		<img src="{% static 'images/tux.png' %}" width="400px" alt="" />
+		<!-- <p><strong><span style="color:#e67e22"><strong>ls, tree:</strong></span></strong></p> -->
+    <p>--help<br />
+      apropos<br />
+      man</p>
+      
+      <p>find .&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# view all within (and below) this directory<br />
+      find . -type d&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# --&quot;-- but dirs only<br />
+      find . -type f -name &quot;filename.ext&quot;&nbsp;&nbsp; &nbsp;# view files by name<br />
+      find . -type f -iname &quot;file*&quot;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# view files that start with &quot;file&quot; (iname = case insensitive)<br />
+      find . -type f -mmin -10&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# view files created in the last ten minutes<br />
+      find . -mmin +10&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# view files created earlier than in the last ten minutes<br />
+      find . -mmin +5 -10&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# between 5 and ten mins ago...<br />
+      find . -mtime -10&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# view files created in the last ten days<br />
+      -amin -10&nbsp;&nbsp; &nbsp;-atime +10<br />
+      find . -size +5M -10M&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# view files larger than 5Mb and smaller than 10Mb<br />
+      find . -empty&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;# view empty files<br />
+      find . -perm 777&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#find the crazy 777-permission files!</p>
+      
+      <p>#change owner of all files in a folder w. find:<br />
+      #find, folder_name, exec change-owner-func, username and group, placeholder ({}), end the statement (\; (OR +))<br />
+      find &lt;folder_name&gt; -exec chown vulpes:vulpesgroup {} \;<br />
+      # same thing, but with chmod for all the dirs:<br />
+      find &lt;folder_name&gt; -type d -exec chmod 775 {} \;<br />
+      #see all files in folder w. permission 775:<br />
+      find &lt;folder_name&gt; -perm 775<br />
+      #search with maxdepth 1; only in the present dir, not below.<br />
+      find . -type f -name &quot;*.jpg&quot; -maxdepth 1</p>
+      
+      <p>reset<br />
+      pwd&nbsp;<br />
+      ls<br />
+      cd<br />
+      whoami<br />
+      clear<br />
+      sudo<br />
+      su - &lt;username&gt;<br />
+      id<br />
+      hostname<br />
+      uname<br />
+      ifconfig<br />
+      ip<br />
+      netstat<br />
+      ss&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#sockets<br />
+      ps&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#processes<br />
+      pstree<br />
+      who<br />
+      env<br />
+      lsblk<br />
+      lsusb<br />
+      lsof<br />
+      alias<br />
+      cat&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#concatenate<br />
+      dir<br />
+      cp<br />
+      rm<br />
+      which&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#where do the binaries live? ie. which ls<br />
+      rmdir<br />
+      mkdir<br />
+      touch<br />
+      grep<br />
+      xdg-open<br />
+      kill<br />
+      ps<br />
+      pstree<br />
+      nano ie.:<br />
+      nano myfolder/mytextfile.txt<br />
+      visudo&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#add alias&#39;es and stuff, like, totally permanently!&nbsp;<br />
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#sudoers file: 1) don&#39;t mess it up!<br />
+      adduser<br />
+      sudo passwd username&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#change (anonymous; useradd) users password<br />
+      useradd<br />
+      deluser<br />
+      addgroup<br />
+      delgroup<br />
+      usermod ie.:<br />
+      sudo usermod username --shell /bin/bash<br />
+      sudo usermod -l newUsername username<br />
+      cat /etc/passwd&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#view users&#39; stuff!<br />
+      sudo cat /etc/shadow&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#view shadow file (where passwords live, shh!)<br />
+      sudo usermod -aG avengers the_Hulk&nbsp;&nbsp; &nbsp;#add user to group<br />
+      cat /etc/group&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#see groups</p>
+      
+      <p>3(4?) kinds of package managers:<br />
+      sudo dpkg -i &lt;package_name.deb&gt;&nbsp;<br />
+      #follow the instructions to install dependencies manually</p>
+      
+      <p>sudo apt install &lt;package_name&gt;<br />
+      #sudo apt --fix-broken install<br />
+      #sudo apt edit-sorces<br />
+      #sudo apt list --installed | grep ^nmap<br />
+      #sudo apt show &lt;name&gt;<br />
+      #sudo apt search &lt;name&gt;<br />
+      #sudo apt remove &lt;name&gt;<br />
+      #OR...<br />
+      #sudo apt purge &lt;name&gt;&nbsp;&nbsp; &nbsp;#purge pidgin-data<br />
+      #sudo apt update &amp;&amp; sudo apt upgrade</p>
+      
+      <p>sudo aptitudde&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;#apt on steroids</p>
+      
+      <p>sudo snap install --classic &lt;name&gt;</p>
+      
+      <p>git clone &lt;url to github item&gt;</p>
+      
+      <p>pip3 install &lt;package_name&gt;<br />
+      OR...<br />
+      pip3 install -r requirements.txt&nbsp;<br />
+      exit()<br />
+      ___________</p>
+      
+      <p>daemons:</p>
+      
+      <p>ps -aux | grep &lt;proces name&gt;</p>
+      
+      <p>systemd : the master of the daemons<br />
+      manages service manager &amp; init sys --&gt; units</p>
+      
+      <p>sudo systemctl status &lt;daemon name&gt;<br />
+      (start, stop, reload, restart, disable, is-active, is-enabled)</p>
+      
+      <p>processes:<br />
+      ps - u vulpes | grep &lt;proces name ie. firefox&gt;<br />
+      pgrep &lt;proces name ie. firefox&gt;<br />
+      kill &lt;process ID&gt;<br />
+      ps -aux&nbsp;</p>
+      
+      <p>top&nbsp;<br />
+      htop</p>
+      
+      <p>#start a process and put it on pause, say...<br />
+      ping -c 10000 google.com<br />
+      ctrl+Z<br />
+      #another...<br />
+      sleep 300<br />
+      ctrl+Z<br />
+      #view paused processes and numbers<br />
+      jobs<br />
+      #make it a background process<br />
+      bg &lt;process number&gt;<br />
+      #type in fg &lt;process number&gt; to bring it back to the foreground (so you can touch it again)<br />
+      fg &lt;process number&gt;<br />
+      #immediately put it in the background with ampersand:<br />
+      ping -c 300 google.com &amp;<br />
+      #types of annihilation on a list!<br />
+      kill -l<br />
+      #-15: SIGTERM&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;soft kill; at the process&#39; leisure<br />
+      #-19: SIGSTOP 18: SIGCONTINUE&nbsp;&nbsp; &nbsp;ctrl+Z<br />
+      #-2: &nbsp;SIGINT (interupt)&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;ctrl+C<br />
+      #-9: &nbsp;SIGKILL&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;forcefully kill process</p>
+      
+      <p>___________</p>
+      
+      <p>alternative stash:</p>
+      
+      <p>python3<br />
+      youtube-dl<br />
+      ffmpeg</p>
+      
+      <p>write stuff to txt-file:<br />
+      cat /etc/passwd &gt; enc_pass.txt<br />
+      nano ~/something.txt<br />
+      touch filename.txt &quot;your message here&quot;<br />
+      echo &quot;blah blah blah&quot; &gt; blahblah.txt<br />
+      - typing something in the bash, and want to edit more succinctly? ctrl+XE</p>
+      
+      <p>____________</p>
+      
+      <p>#HEALTHY PRAXIS!<br />
+      &nbsp; &nbsp; Try configuring unconfigured packages:</p>
+      
+      <p>&nbsp; &nbsp; sudo dpkg --configure -a</p>
+      
+      <p>&nbsp; &nbsp; Update the contents of the repositories</p>
+      
+      <p>&nbsp; &nbsp; sudo apt-get update</p>
+      
+      <p>&nbsp; &nbsp; Try to fix missing dependencies:</p>
+      
+      <p>&nbsp; &nbsp; sudo apt-get -f install</p>
+      
+      <p>&nbsp; &nbsp; Update all packages with new versions available:</p>
+      
+      <p>&nbsp; &nbsp; sudo apt-get full-upgrade</p>
+      
+      <p>&nbsp; &nbsp; Reinstall Ubuntu desktop:</p>
+      
+      <p>&nbsp; &nbsp; sudo apt-get install --reinstall ubuntu-desktop</p>
+      
+      <p>&nbsp; &nbsp; Remove unnecessary packages:</p>
+      
+      <p>&nbsp; &nbsp; sudo apt-get autoremove</p>
+      
+      <p>&nbsp; &nbsp; Delete downloaded packages already installed:</p>
+      
+      <p>&nbsp; &nbsp; sudo apt-get clean</p>
+      
+      <p>&nbsp; &nbsp; Reboot the system to see if the issue was resolved:</p>
+      
+      <p>&nbsp; &nbsp; sudo reboot</p>
+      
+      <p>#WHEN IT GOES AWRY:<br />
+      hold alt+sysrq and type in the sequence r e i s u b (busier backwards!!) leaving a few seconds per letter for the proces to finish</p>
+      
+{% endblock %}

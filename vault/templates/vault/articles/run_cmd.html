@@ -1,0 +1,384 @@
+{% extends 'vault/base.html' %}
+{% load static %}
+{% block content %}
+<article class="content-section">
+  <div class="media-body">
+    <h4>command prompt cheat sheet</h4>
+    <hr/>
+		<img src="{% static 'images/runCMD.jpg' %}" width="400px" alt="" />
+		<p><strong><span style="color:#e67e22"><strong>dir, ls, tree:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Type in </span><strong><span style="color:#212529"><strong>dir</strong></span></strong><span style="color:#212529"> or </span><strong><span style="color:#212529"><strong>dir path_to_folder</strong></span></strong><span style="color:#212529"> to view a list of directories. If you&#39;ve installed git (properly), you&#39;ll be able to use cross-platform cmds such as </span><strong><span style="color:#212529"><strong>ls </strong></span></strong><span style="color:#212529">instead of dir.</span></p>
+
+		<p><strong><span style="color:#212529"><strong>Tree</strong></span></strong><span style="color:#212529"> is nice as well, try typing that in.</span></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Interrupt Proces:</strong></span></strong></p>
+
+		<p><span style="color:#212529">If a proces halts or becomes annoying, press ctrl+C to interrupt. </span></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Wildcards:</strong></span></strong></p>
+
+		<p><span style="color:#212529">If we want to select all files with a certain extension or name, you can use the wildcard * (eg: dir *.txt will show us all the files with the extension txt)</span></p>
+
+		<p><strong><span style="color:#212529"><strong>dir hello.* </strong></span></strong><strong><span style="color:#212529"> </span></strong><span style="color:#212529">for file names and </span><strong><span style="color:#212529"><strong>dir *.txt </strong></span></strong><span style="color:#212529">for file type </span></p>
+
+		<p><span style="color:#212529">Note: </span><strong><span style="color:#212529"><strong>dir *.* </strong></span></strong><span style="color:#212529">for EVERYTHING.</span></p>
+
+		<p><a href="https://www.computerhope.com/jargon/w/wildcard.htm"><span style="color:#007bff">More tricks w. wildcards!</span></a></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Filenames w. spaces:</strong></span></strong></p>
+
+		<p><span style="color:#212529">In quotes, ie: </span><strong><span style="color:#212529"><strong>del &quot;my file&quot;</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Switches:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Help switch: </span><strong><span style="color:#212529"><strong>/? </strong></span></strong><span style="color:#212529">(eg: </span><strong><span style="color:#212529"><strong>help /?</strong></span></strong><span style="color:#212529">)</span></p>
+
+		<p><strong><span style="color:#212529"><strong>dir /p </strong></span></strong><span style="color:#212529">will print the dir one page at a time (press any key to proceed)</span></p>
+
+		<p><span style="color:#212529">Switches work differently for different commands, so it is recommended to type in </span><strong><span style="color:#212529"><strong>&lt;command&gt; /?</strong></span></strong><span style="color:#212529"> to see what options you have. </span></p>
+
+		<p><span style="color:#212529">Note: For a sorted list, type:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>dir /b /s | sort </strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Running executable files:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Ex: type </span><strong><span style="color:#212529"><strong>start notepad thisfile.txt</strong></span></strong><span style="color:#212529"> to open the file in </span><a href="https://www.computerhope.com/jargon/n/notepad.htm"><span style="color:#007bff">Notepad</span></a><span style="color:#212529">. </span></p>
+
+		<p><span style="color:#212529">Any file that is an </span><a href="https://www.computerhope.com/jargon/e/execfile.htm"><span style="color:#007bff">executable file</span></a><span style="color:#212529"> can be run from the command line by typing the name of the file. For example, if you listed files using the dir command and see a file named &quot;myfile.exe&quot; typing &quot;myfile&quot; at the command line runs that program; typing in the suffix is not needed (you may, if you prefer, no problem :))</span></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Change directory:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Typing </span><strong><span style="color:#212529"><strong>cd .. </strong></span></strong><span style="color:#212529"> goes up one level, and typing </span><strong><span style="color:#212529"><strong>cd\</strong></span></strong><span style="color:#212529"> takes you to the C:\&gt; prompt</span></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Copying files:</strong></span></strong></p>
+
+		<p><span style="color:#212529">You can use the </span><strong><span style="color:#212529"><strong>copy</strong></span></strong><span style="color:#212529"> command from the command line to copy files.</span></p>
+
+		<p><strong><span style="color:#212529"><strong>copy c:\myfile.txt d:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>copy *.txt e:</strong></span></strong></p>
+
+		<p><span style="color:#212529">The above command uses a </span><a href="https://www.computerhope.com/jargon/w/wildcard.htm"><span style="color:#007bff">wildcard</span></a><span style="color:#212529"> to copy all text files in the </span><a href="https://www.computerhope.com/jargon/c/currentd.htm"><span style="color:#007bff">current directory</span></a><span style="color:#212529"> to the E: drive.</span></p>
+
+		<pre>
+		<strong><span style="color:#212529"><strong>copy f:\example.xls</strong></span></strong></pre>
+
+		<p><span style="color:#212529">The above command would copy the file &quot;example.xls&quot; on the F:\ drive to the current directory. Notice that we did not specify a destination; if the destination is not specified, the current directory is used by default.</span></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Xcopy copy method (advanced):</strong></span></strong></p>
+
+		<p><span style="color:#212529">Using the xcopy command, you can copy the </span><em><span style="color:#212529">all the files</span></em><span style="color:#212529"> from one drive to another drive. Example:</span></p>
+
+		<pre>
+		<strong><span style="color:#212529"><strong>xcopy /h /c /k /e /r /y c:\ d:\</strong></span></strong></pre>
+
+		<p><span style="color:#212529">The above command copies </span><em><span style="color:#212529">all of the files</span></em><span style="color:#212529"> on the C:\ drive to the D:\ drive. There are many options specified here (the letters with a slash before them). Here&#39;s what they do:</span></p>
+
+		<table border="0" cellpadding="2" cellspacing="0" style="width:643px">
+			<tbody>
+				<tr>
+					<th>
+					<p>Option</p>
+					</th>
+					<th>
+					<p>Meaning</p>
+					</th>
+				</tr>
+				<tr>
+					<td>
+					<p><strong><strong>/h</strong></strong></p>
+					</td>
+					<td>
+					<p>Copy <a href="https://www.computerhope.com/jargon/h/hiddenfi.htm"><span style="color:#007bff">hidden</span></a> and <a href="https://www.computerhope.com/jargon/s/systfile.htm"><span style="color:#007bff">system</span></a> files. Normally xcopy skips these files, but if you specify this option, they will be copied.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<p><strong><strong>/c</strong></strong></p>
+					</td>
+					<td>
+					<p>Continue copying even if an error is encountered. This can be helpful if you need to step away from the computer, and you know that you won&#39;t need to stop the copy operation, even if there are errors.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<p><strong><strong>/k</strong></strong></p>
+					</td>
+					<td>
+					<p>Keep read-only attribute. If you specify this option, <a href="https://www.computerhope.com/jargon/r/readonly.htm"><span style="color:#007bff">read-only</span></a> files will retain the read-only <a href="https://www.computerhope.com/jargon/f/fileattr.htm"><span style="color:#007bff">file attribute</span></a> when they are copied.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<p><strong><strong>/e</strong></strong></p>
+					</td>
+					<td>
+					<p>Copy empty directories. Normally, empty directories are not copied. If this option is specified, xcopy will copy all directories, even if they are empty.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<p><strong><strong>/r</strong></strong></p>
+					</td>
+					<td>
+					<p>Overwrite read-only files in destination. Normally, if read-only files exist in your destination which would be <a href="https://www.computerhope.com/jargon/o/overwrit.htm"><span style="color:#007bff">overwritten</span></a> by the copy, xcopy will stop and tell you &quot;Access denied.&quot; If this option is specified, it will overwrite them and continue copying.</p>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<p><strong><strong>/y</strong></strong></p>
+					</td>
+					<td>
+					<p>Assume yes to all overwrites. Normally, if a file would be overwritten by the copy, xcopy will ask you to confirm before it overwrites. If this option is specified, it will overwrite them without asking you.</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p><strong><span style="color:#e67e22"><strong>Create files:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Create a .txt file:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>start notepad myfile.txt</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Batch files:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Start a batch file:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>start notepad example.bat</strong></span></strong><span style="color:#212529"> </span></p>
+
+		<p><span style="color:#212529">Insert the following:</span></p>
+
+		<p><em><span style="color:#212529">@echo off<br />
+		cls</span></em><br />
+		<em><span style="color:#212529">dir</span></em></p>
+
+		<p><span style="color:#212529">Save the file (normally; using the GUI) and run it by going to it&#39;s directory and typing in </span><strong><span style="color:#212529"><strong>example</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Moving a file:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Assuming example.bat exists:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>mkdir dir2</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>move example.bat dir2</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Rename a file:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>rename example.bat first.bat</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Deleting files:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>del hello.txt</strong></span></strong></p>
+
+		<p><span style="color:#212529">Tip: When deleting files you can also use </span><a href="https://www.computerhope.com/jargon/w/wildcard.htm"><span style="color:#007bff">wildcards</span></a><span style="color:#212529"> to delete multiple files at once. For example, if the directory contained several .GIF image files you could type del *.gif to delete all files ending with the .gif file extension.</span></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Rename a file/directory:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>rename dir2 &quot;my special folder&quot;</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Remove directory:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>rmdir &quot;my special folder&quot;</strong></span></strong></p>
+
+		<p><span style="color:#212529">Note: In case the folder contains files, </span><strong><span style="color:#212529"><strong>rmdir /s &quot;my special folder&quot; </strong></span></strong><span style="color:#212529">to destroy the files along with the folder. </span></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Pinging:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>ping google.com</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>ping 167.128.0.13</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>List ping path:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>pathping &lt;IP or domain address&gt;</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Trace route:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>tracert facebook.com</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>tracert 192.145.0.2</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Retrieve meta:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>ipconfig /all</strong></span></strong></p>
+
+		<p><span style="color:#212529">See also:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>ipconfig /flushdns<br />
+		ipconfig /release<br />
+		ipconfig /renew</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Print ipconfig to a .txt file:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>ipconfig /all &gt; network_info.txt</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>dir &gt; me_dirextareee.txt</strong></span></strong></p>
+
+		<p><span style="color:#212529">Note: will print to current working directory (cwd)</span></p>
+
+		<p><span style="color:#212529">To append data to an existing file, use: </span><strong><span style="color:#212529"><strong>&gt;&gt;</strong></span></strong></p>
+
+		<p><span style="color:#212529">To &quot;go backwards&quot;, snatching data from the .txt file and inserting it into an (empty) cmd prompt, simply reverse the handle:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>sort &lt; network_info.txt</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Formatting drive:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>format c: /q /u</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Create secure folder:</strong></span></strong></p>
+
+		<p><span style="color:#212529">browse to desired location and:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>md aux\</strong></span></strong></p>
+
+		<p><span style="color:#212529">this folder can neither be moved nor deleted.</span></p>
+
+		<p><span style="color:#212529">To get rid of it:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>rd aux\</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Create Hidden Folder:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>mkdir secrets</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>attrib +h +s +r secrets</strong></span></strong></p>
+
+		<p><em><span style="color:#212529">Secrets</span></em><span style="color:#212529"> is, of course, an arbitrary name; name it as you please.</span></p>
+
+		<p><span style="color:#212529">This will even circumvent &quot;show hidden files and folders&quot;.</span></p>
+
+		<p><span style="color:#212529">Note: name it something that you can remember; you&#39;ll need to in order to bring it back:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>attrib -h -s -r secrets</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Clear Screen:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>cls</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Shutdown w. cmd prompt:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>shutdown /s</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>shutdown /r</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>shutdown /l</strong></span></strong></p>
+
+		<p><span style="color:#212529">shutdown, reboot &amp; logoff, respectively </span></p>
+
+		<p><span style="color:#212529">To set a timer for shutdown in 50 seconds w. a message:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>shutdown /s /t 50 /c &quot;I&#39;m shutting down now, buddy!&quot;</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Create WiFi hotspot:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Set up:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>netsh wlan set hostednetwork mode=allow ssid=&lt;insert host here&gt; key=&lt;insert login here (min 8 chars)&gt;</strong></span></strong></p>
+
+		<p><span style="color:#212529">Start:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>netsh wlan start hostednetwork</strong></span></strong></p>
+
+		<p><span style="color:#212529">Stop it again:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>netsh wlan stop hostednetwork </strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>View all installed programmes:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>wmic product get name </strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Network statistics:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>netstat ?/</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Associated items:</strong></span></strong></p>
+
+		<p><span style="color:#212529">View complete list of associations between file types and the programs that run them.</span></p>
+
+		<p><strong><span style="color:#212529"><strong>assoc </strong></span></strong></p>
+
+		<p><span style="color:#212529">To set associations insert syntax as seen below:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>assoc .txt=word</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Wipe file content:</strong></span></strong></p>
+
+		<p><span style="color:#212529">When you delete files in Windows, what you are actually doing is destroying the file path. The data remains and can be retrieved. Cipher puts an end to that nonsense.</span></p>
+
+		<p><strong><span style="color:#212529"><strong>cipher</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>View installed drivers:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>driverquery -v</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>view currrently open ports and their states:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>netstat -an</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Retrieve System Info:</strong></span></strong></p>
+
+		<p><span style="color:#212529">For a list of installed hardware:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>systeminfo</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Power Configuration:</strong></span></strong></p>
+
+		<p><span style="color:#212529">view available energy states:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>powercfg -a</strong></span></strong><br />
+		<span style="color:#212529">view energy consumption report:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>powercfg /energy</strong></span></strong></p>
+
+		<p><span style="color:#212529">Also see:</span><br />
+		<strong><span style="color:#212529"><strong>powercfg /hibernate on</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>powercfg /hibernate off</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>Sfc - view and repair win sys files:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>sfc /scannow</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Tasklist:</strong></span></strong></p>
+
+		<p><span style="color:#212529">advanced task manager, basically</span></p>
+
+		<p><strong><span style="color:#212529"><strong>tasklist</strong></span></strong></p>
+
+		<p><span style="color:#212529">show services:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>tasklist -svc</strong></span></strong></p>
+
+		<p><span style="color:#212529">more details:</span></p>
+
+		<p><strong><span style="color:#212529"><strong>tasklist -v</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Kill it with fire:</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>taskkill -im &lt;exe name&gt;</strong></span></strong></p>
+
+		<p><strong><span style="color:#212529"><strong>taskkill -pid &lt;exe name&gt;</strong></span></strong></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Arp:</strong></span></strong></p>
+
+		<p><span style="color:#212529">arp: - adress resolution protocol; used to view and manage the ARP cache<br />
+		- resolves MAC- and IP-adresses</span></p>
+
+		<p><span style="color:#212529">arp # cmd looks up docstring on ARP<br />
+		arp -a # lists all recent MAC and IP-adresses<br />
+		arp -d &lt;IP adress&gt; # delete an IP in the ARP</span></p>
+
+		<p><strong><span style="color:#e67e22"><strong>Clip command:</strong></span></strong></p>
+
+		<p><span style="color:#212529">Send the output returned by any cmd to the clipboard thusly (we&#39;ll use ipconfig as an example):</span></p>
+
+		<p><strong><span style="color:#212529"><strong>ipconfig | clip </strong></span></strong></p>
+
+		<p>&nbsp;</p>
+	</div>
+</article>
+{% endblock %}

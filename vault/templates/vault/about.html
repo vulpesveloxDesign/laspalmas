@@ -1,0 +1,23 @@
+{% extends 'vault/base.html' %}
+{% load crispy_forms_tags %}
+{% block head_title %}{{ block.super }} - contact{% endblock %}
+{% block content %}
+<div class="content-section">
+  <h4>about</h4>
+  <hr/>
+  <p>This project was originally built with learning the ins and outs of Django in mind, but now I'm using it for documenting my journey to Las Palmas. I guess. </p>
+</div>
+<div class="content-section">
+  <h4>contact</h4>
+  <hr/>
+  shoot me an email at <a href="mailto:vulpesenlaspalmas@gmail.com">vulpesenlaspalmas@gmail.com</a> if you like. Or use the form below, I dunno...
+  <form class="" method="POST">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form|crispy }}
+    <div class="form-group" align = "center">
+      <button class="btn btn-secondary ml-2 mt-2 mr-2 mb-2" type="submit">send</button>
+    </div>
+  </form>
+  </div>
+{% endblock %}
