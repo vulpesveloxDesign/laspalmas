@@ -1,7 +1,8 @@
 *.pyc  
 *~  
 __pycache__  
-.env  
+env
+tokenboy.txt  
 db.sqlite3  
 /vault/static  
 .DS_Store  
